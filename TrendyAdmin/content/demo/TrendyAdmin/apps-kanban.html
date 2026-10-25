@@ -1150,11 +1150,20 @@
 </div>
 <div class="mb-3">
 <label class="form-label">Assignees</label>
-<div class="d-flex gap-2">
-<img alt="" class="kanban-member" src="assets/img/avatars/avatar-1.webp" style="margin: 0; cursor: pointer; opacity: 0.5;"/>
-<img alt="" class="kanban-member" src="assets/img/avatars/avatar-2.webp" style="margin: 0; cursor: pointer;"/>
-<img alt="" class="kanban-member" src="assets/img/avatars/avatar-3.webp" style="margin: 0; cursor: pointer; opacity: 0.5;"/>
-<img alt="" class="kanban-member" src="assets/img/avatars/avatar-4.webp" style="margin: 0; cursor: pointer; opacity: 0.5;"/>
+<div id="taskAssigneesList" class="d-flex flex-wrap gap-2"></div>
+</div>
+<div class="row mb-3">
+<div class="col-6">
+<label class="form-label" for="taskStoryPoints">Story Points</label>
+<input class="form-control" id="taskStoryPoints" max="200" min="1" placeholder="e.g. 3" type="number"/>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label">Checklist</label>
+<div id="taskChecklistItems"></div>
+<div class="input-group mt-2">
+<input class="form-control form-control-sm" id="newChecklistItem" placeholder="Add checklist item…" type="text"/>
+<button class="btn btn-outline-secondary btn-sm" id="addChecklistItemBtn" type="button"><i class="ph ph-plus"></i></button>
 </div>
 </div>
 </form>
@@ -1192,40 +1201,11 @@
 <div class="task-detail-row">
 <div class="task-detail-icon"><i class="ph ph-check-square"></i></div>
 <div class="task-detail-content">
-<div class="task-detail-label">Checklist (6/8)</div>
-<div class="task-detail-value">
-<div class="form-check mb-2">
-<input checked="" class="form-check-input" id="check1" type="checkbox"/>
-<label class="form-check-label" for="check1">Set up WebSocket server</label>
-</div>
-<div class="form-check mb-2">
-<input checked="" class="form-check-input" id="check2" type="checkbox"/>
-<label class="form-check-label" for="check2">Create notification model</label>
-</div>
-<div class="form-check mb-2">
-<input checked="" class="form-check-input" id="check3" type="checkbox"/>
-<label class="form-check-label" for="check3">Build notification API endpoints</label>
-</div>
-<div class="form-check mb-2">
-<input checked="" class="form-check-input" id="check4" type="checkbox"/>
-<label class="form-check-label" for="check4">Implement real-time updates</label>
-</div>
-<div class="form-check mb-2">
-<input checked="" class="form-check-input" id="check5" type="checkbox"/>
-<label class="form-check-label" for="check5">Create notification center UI</label>
-</div>
-<div class="form-check mb-2">
-<input checked="" class="form-check-input" id="check6" type="checkbox"/>
-<label class="form-check-label" for="check6">Add notification badges</label>
-</div>
-<div class="form-check mb-2">
-<input class="form-check-input" id="check7" type="checkbox"/>
-<label class="form-check-label" for="check7">Implement push notifications</label>
-</div>
-<div class="form-check">
-<input class="form-check-input" id="check8" type="checkbox"/>
-<label class="form-check-label" for="check8">Add user notification preferences</label>
-</div>
+<div class="task-detail-label" id="taskDetailChecklistHeader">Checklist (0/0)</div>
+<div class="task-detail-value" id="taskDetailChecklistItems"></div>
+<div class="input-group mt-2">
+<input class="form-control form-control-sm" id="detailNewChecklistItem" placeholder="Add checklist item…" type="text"/>
+<button class="btn btn-outline-secondary btn-sm" id="detailAddChecklistBtn" type="button"><i class="ph ph-plus"></i></button>
 </div>
 </div>
 </div>
@@ -1261,6 +1241,13 @@
 </div>
 </div>
 <div class="task-detail-row">
+<div class="task-detail-icon"><i class="ph ph-lightning"></i></div>
+<div class="task-detail-content">
+<div class="task-detail-label">Story Points</div>
+<div class="task-detail-value" id="taskDetailStoryPointsVal">—</div>
+</div>
+</div>
+<div class="task-detail-row">
 <div class="task-detail-icon"><i class="ph ph-squares-four"></i></div>
 <div class="task-detail-content">
 <div class="task-detail-label">Status</div>
@@ -1278,16 +1265,7 @@
 <div class="task-detail-icon"><i class="ph ph-users"></i></div>
 <div class="task-detail-content">
 <div class="task-detail-label">Assignees</div>
-<div class="task-detail-value">
-<div class="d-flex gap-2 align-items-center">
-<img alt="" class="rounded-circle" height="28" src="assets/img/avatars/avatar-4.webp" width="28"/>
-<span>Mike Johnson</span>
-</div>
-<div class="d-flex gap-2 align-items-center mt-2">
-<img alt="" class="rounded-circle" height="28" src="assets/img/avatars/avatar-5.webp" width="28"/>
-<span>Sarah Wilson</span>
-</div>
-</div>
+<div class="task-detail-value" id="taskDetailAssigneesVal">—</div>
 </div>
 </div>
 <div class="task-detail-row">
@@ -1362,9 +1340,11 @@
     let draggedCard = null;
     let dragSourceStatus = null;
     window._detailsTask = null;
+    let allUsers = [];
+    let selectedAssignees = new Set();
+    let checklistItems = [];
 
     // ── Helpers ────────────────────────────────────────────────────────────────
-    const LABEL_COLORS = { feature:'primary', bug:'danger', enhancement:'info', design:'warning', urgent:'danger' };
     const PRIORITY_COLORS = { low:'secondary', medium:'warning', high:'danger' };
     const STATUS_LABELS = { backlog:'Backlog', todo:'To Do', 'in-progress':'In Progress', review:'Review', done:'Done' };
 
@@ -1374,6 +1354,149 @@
       return d.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
     }
     function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
+    function avatarUrl(userIndex) { return `assets/img/avatars/avatar-${(Math.abs(userIndex) % 9) + 1}.webp`; }
+    function userAvatarUrl(userId) {
+      const idx = allUsers.findIndex(u => u.id === userId);
+      return avatarUrl(idx >= 0 ? idx : 0);
+    }
+
+    // ── Load users ─────────────────────────────────────────────────────────────
+    async function loadUsers() {
+      try { allUsers = await FP.apiFetch('/kanban/users'); } catch {}
+    }
+
+    // ── Assignee picker (add/edit modal) ───────────────────────────────────────
+    function renderAssigneePicker() {
+      const container = document.getElementById('taskAssigneesList');
+      if (!container) return;
+      container.innerHTML = '';
+      allUsers.forEach((u, i) => {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'position:relative;cursor:pointer;';
+        wrap.title = u.name;
+        const img = document.createElement('img');
+        img.src = avatarUrl(i);
+        img.alt = u.name;
+        img.className = 'kanban-member';
+        img.style.cssText = 'margin:0;border-radius:50%;';
+        const selected = selectedAssignees.has(u.id);
+        img.style.opacity = selected ? '1' : '0.3';
+        if (selected) img.style.outline = '2px solid var(--bs-primary)';
+        wrap.appendChild(img);
+        if (selected) {
+          const tick = document.createElement('span');
+          tick.style.cssText = 'position:absolute;bottom:-2px;right:-2px;background:var(--bs-primary);color:#fff;border-radius:50%;width:14px;height:14px;font-size:9px;display:flex;align-items:center;justify-content:center;';
+          tick.innerHTML = '<i class="ph ph-check"></i>';
+          wrap.appendChild(tick);
+        }
+        wrap.addEventListener('click', () => {
+          if (selectedAssignees.has(u.id)) selectedAssignees.delete(u.id);
+          else selectedAssignees.add(u.id);
+          renderAssigneePicker();
+        });
+        container.appendChild(wrap);
+      });
+    }
+
+    // ── Checklist editor (add/edit modal) ──────────────────────────────────────
+    function renderChecklistEditor() {
+      const container = document.getElementById('taskChecklistItems');
+      if (!container) return;
+      container.innerHTML = '';
+      checklistItems.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'd-flex align-items-center gap-2 mb-1';
+        div.innerHTML = `
+          <input type="checkbox" class="form-check-input mt-0" ${item.done ? 'checked' : ''}>
+          <span class="flex-grow-1 small">${item.text}</span>
+          <button class="btn btn-link text-danger p-0" style="line-height:1" type="button"><i class="ph ph-x"></i></button>`;
+        div.querySelector('input').addEventListener('change', e => { checklistItems[i].done = e.target.checked; });
+        div.querySelector('button').addEventListener('click', () => { checklistItems.splice(i, 1); renderChecklistEditor(); });
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById('addChecklistItemBtn').addEventListener('click', () => {
+      const input = document.getElementById('newChecklistItem');
+      const text = input.value.trim();
+      if (!text) return;
+      checklistItems.push({ text, done: false });
+      input.value = '';
+      renderChecklistEditor();
+    });
+    document.getElementById('newChecklistItem').addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); document.getElementById('addChecklistItemBtn').click(); }
+    });
+
+    // ── Checklist in detail modal ──────────────────────────────────────────────
+    function renderDetailChecklist(task) {
+      const items = task.checklist || [];
+      const done = items.filter(i => i.done).length;
+      document.getElementById('taskDetailChecklistHeader').textContent = `Checklist (${done}/${items.length})`;
+      const container = document.getElementById('taskDetailChecklistItems');
+      container.innerHTML = items.length === 0
+        ? '<p class="text-muted small mb-0">No checklist items yet.</p>' : '';
+      items.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'form-check mb-2';
+        div.innerHTML = `
+          <input class="form-check-input" type="checkbox" id="dc${idx}" ${item.done ? 'checked' : ''}>
+          <label class="form-check-label${item.done ? ' text-decoration-line-through text-muted' : ''}" for="dc${idx}">${item.text}</label>`;
+        div.querySelector('input').addEventListener('change', () => patchChecklist(task, idx));
+        container.appendChild(div);
+      });
+    }
+
+    async function patchChecklist(task, toggleIdx) {
+      const newList = task.checklist.map((it, i) => i === toggleIdx ? { ...it, done: !it.done } : it);
+      try {
+        await FP.apiFetch('/kanban/tasks/' + task.id + '/checklist', {
+          method: 'PATCH', body: JSON.stringify({ checklist: newList })
+        });
+        task.checklist = newList;
+        if (window._detailsTask?.id === task.id) window._detailsTask.checklist = newList;
+      } catch { FP.showError('Could not update checklist'); return; }
+      renderDetailChecklist(task);
+      syncCardChecklist(task.id, newList);
+    }
+
+    async function addDetailChecklistItem() {
+      const input = document.getElementById('detailNewChecklistItem');
+      const text = input.value.trim();
+      if (!text || !window._detailsTask) return;
+      const task = window._detailsTask;
+      const newList = [...(task.checklist || []), { text, done: false }];
+      try {
+        await FP.apiFetch('/kanban/tasks/' + task.id + '/checklist', {
+          method: 'PATCH', body: JSON.stringify({ checklist: newList })
+        });
+        task.checklist = newList;
+      } catch { FP.showError('Could not update checklist'); return; }
+      input.value = '';
+      renderDetailChecklist(task);
+      syncCardChecklist(task.id, newList);
+    }
+
+    document.getElementById('detailAddChecklistBtn').addEventListener('click', addDetailChecklistItem);
+    document.getElementById('detailNewChecklistItem').addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); addDetailChecklistItem(); }
+    });
+
+    function syncCardChecklist(taskId, checklist) {
+      const card = document.querySelector(`.kanban-card[data-id="${taskId}"]`);
+      if (!card) return;
+      const done = checklist.filter(i => i.done).length;
+      const total = checklist.length;
+      let el = card.querySelector('.kanban-card-checklist');
+      if (total === 0) { el?.remove(); return; }
+      if (!el) {
+        el = document.createElement('span');
+        el.className = 'kanban-card-checklist';
+        card.querySelector('.kanban-card-meta').prepend(el);
+      }
+      el.className = `kanban-card-checklist${done === total ? ' complete' : ''}`;
+      el.innerHTML = `<i class="ph-duotone ph-check-square"></i> ${done}/${total}`;
+    }
 
     // ── Card factory ───────────────────────────────────────────────────────────
     function buildCard(task) {
@@ -1383,19 +1506,29 @@
       div.dataset.id = task.id;
       div.dataset.priority = task.priority;
       div.dataset.status = task.status;
-      const labelColor = LABEL_COLORS[task.label] || 'primary';
-      const dueHtml = task.due_date
-        ? `<span class="kanban-card-meta-item"><i class="ph ph-calendar-blank"></i> ${task.due_date}</span>` : '';
+
+      const checklist = task.checklist || [];
+      const clDone = checklist.filter(i => i.done).length;
+      const clTotal = checklist.length;
+      const assignees = task.assignees || [];
+
+      const spHtml = task.story_points
+        ? `<span class="kanban-card-meta-item" title="Story Points"><i class="ph ph-lightning"></i> ${task.story_points}</span>` : '';
+      const clHtml = clTotal > 0
+        ? `<span class="kanban-card-checklist${clDone === clTotal ? ' complete' : ''}"><i class="ph-duotone ph-check-square"></i> ${clDone}/${clTotal}</span>` : '';
+      const avatarHtml = assignees.slice(0, 3).map(a =>
+        `<img src="${userAvatarUrl(a.id)}" alt="${a.name}" title="${a.name}" class="kanban-card-assignee">`
+      ).join('') + (assignees.length > 3
+        ? `<span class="kanban-card-assignee d-flex align-items-center justify-content-center bg-secondary text-white" style="font-size:9px;border-radius:50%;width:28px;height:28px;flex-shrink:0">+${assignees.length - 3}</span>` : '');
+
       div.innerHTML = `
         <div class="kanban-card-labels">
           <span class="kanban-label kanban-label-${task.label}">${cap(task.label)}</span>
         </div>
         <div class="kanban-card-title">${task.title}</div>
         <div class="kanban-card-footer">
-          <div class="kanban-card-meta">${dueHtml}</div>
-          <div class="kanban-card-assignees">
-            <img src="assets/img/avatars/avatar-1.webp" alt="" class="kanban-card-assignee">
-          </div>
+          <div class="kanban-card-meta">${spHtml}${clHtml}</div>
+          <div class="kanban-card-assignees">${avatarHtml}</div>
         </div>`;
       div.addEventListener('dragstart', handleDragStart);
       div.addEventListener('dragend',   handleDragEnd);
@@ -1425,8 +1558,7 @@
     // ── Detail modal ──────────────────────────────────────────────────────────
     function openDetail(task) {
       window._detailsTask = task;
-      const labelColor = LABEL_COLORS[task.label] || 'primary';
-      const prioColor  = PRIORITY_COLORS[task.priority] || 'secondary';
+      const prioColor = PRIORITY_COLORS[task.priority] || 'secondary';
       document.getElementById('taskDetailLabelBadge').className = `kanban-label kanban-label-${task.label} mb-2`;
       document.getElementById('taskDetailLabelBadge').textContent = cap(task.label);
       document.getElementById('taskDetailTitle').textContent = task.title;
@@ -1434,9 +1566,21 @@
         ? `<p>${task.description.replace(/\n/g,'<br>')}</p>` : '<p class="text-muted">No description.</p>';
       document.getElementById('taskDetailPriorityBadge').className = `badge bg-${prioColor}`;
       document.getElementById('taskDetailPriorityBadge').textContent = cap(task.priority);
+      document.getElementById('taskDetailStoryPointsVal').textContent = task.story_points ?? '—';
       document.getElementById('taskDetailStatusVal').textContent = STATUS_LABELS[task.status] || task.status;
       document.getElementById('taskDetailDueDateVal').textContent = fmtDate(task.due_date);
       document.getElementById('taskDetailCreatedVal').textContent = fmtDate(task.created_at ? task.created_at.substring(0,10) : null);
+      // Assignees
+      const assignees = task.assignees || [];
+      document.getElementById('taskDetailAssigneesVal').innerHTML = assignees.length
+        ? assignees.map((a, i) =>
+            `<div class="d-flex gap-2 align-items-center${i > 0 ? ' mt-2' : ''}">
+              <img class="rounded-circle" height="28" width="28" src="${userAvatarUrl(a.id)}" alt="${a.name}">
+              <span>${a.name}</span>
+            </div>`).join('')
+        : '<span class="text-muted">No assignees</span>';
+      // Checklist
+      renderDetailChecklist(task);
       const modal = new bootstrap.Modal(document.getElementById('taskDetailModal'));
       modal.show();
     }
@@ -1463,7 +1607,14 @@
       document.getElementById('taskStatus').value = t.status;
       document.getElementById('taskPriority').value = t.priority;
       document.getElementById('taskLabel').value = t.label || 'feature';
-      if (t.due_date) document.getElementById('taskDueDate').value = t.due_date;
+      document.getElementById('taskDueDate').value = t.due_date || '';
+      document.getElementById('taskStoryPoints').value = t.story_points || '';
+      // Restore assignees
+      selectedAssignees = new Set((t.assignees || []).map(a => a.id));
+      renderAssigneePicker();
+      // Restore checklist
+      checklistItems = (t.checklist || []).map(i => ({ ...i }));
+      renderChecklistEditor();
       const modal = new bootstrap.Modal(document.getElementById('addTaskModal'));
       modal.show();
     });
@@ -1474,6 +1625,10 @@
       document.getElementById('saveTaskBtn').textContent = 'Add Task';
       document.getElementById('editingTaskId').value = '';
       document.getElementById('addTaskForm').reset();
+      selectedAssignees = new Set();
+      checklistItems = [];
+      renderChecklistEditor();
+      renderAssigneePicker();
     });
 
     // ── Add / Edit task ────────────────────────────────────────────────────────
@@ -1491,13 +1646,17 @@
       const title = document.getElementById('taskTitle').value.trim();
       if (!title) { document.getElementById('taskTitle').focus(); return; }
       const editingId = document.getElementById('editingTaskId').value;
+      const spRaw = parseInt(document.getElementById('taskStoryPoints').value);
       const payload = {
         title,
-        description: document.getElementById('taskDescription').value || null,
-        status:      document.getElementById('taskStatus').value,
-        priority:    document.getElementById('taskPriority').value,
-        label:       document.getElementById('taskLabel').value,
-        due_date:    document.getElementById('taskDueDate').value || null,
+        description:  document.getElementById('taskDescription').value || null,
+        status:       document.getElementById('taskStatus').value,
+        priority:     document.getElementById('taskPriority').value,
+        label:        document.getElementById('taskLabel').value,
+        due_date:     document.getElementById('taskDueDate').value || null,
+        story_points: isNaN(spRaw) ? null : spRaw,
+        checklist:    checklistItems,
+        assignee_ids: [...selectedAssignees],
       };
       try {
         if (editingId) {
@@ -1591,6 +1750,8 @@
     }
 
     // ── Init ───────────────────────────────────────────────────────────────────
+    await loadUsers();
+    renderAssigneePicker();
     await loadTasks();
   });
   </script>
