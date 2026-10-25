@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verify Email - Forty Portal</title>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="Forty Portal - Agency Admin" name="description"/>
+<meta content="admin, dashboard, bootstrap" name="keywords"/>
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Google Fonts - Plus Jakarta Sans (body) + Outfit (headings) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Vendor CSS Files -->
+<link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../../vendors/remixicon/remixicon.css" rel="stylesheet"/>
+<link href="../../vendors/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+<link href="../../vendors/phosphor-icons/phosphor-icons.css" rel="stylesheet"/>
+<link href="../../vendors/lucide-icons/lucide.css" rel="stylesheet"/>
+<link href="../../vendors/simple-datatables/style.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.snow.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.bubble.css" rel="stylesheet"/>
+<link href="../../vendors/choices.js/choices.min.css" rel="stylesheet"/>
+<link href="../../vendors/flatpickr/flatpickr.min.css" rel="stylesheet"/>
+<!-- Template Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet"/>
+<!-- =======================================================
+    * Template Name: Forty Portal - Agency Admin
+    * Template URL: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/
+    * Updated: Jul 29, 2026 with Bootstrap v5.3.8
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+<body>
+<div class="auth-layout auth-centered">
+<!-- Content Side -->
+<div class="auth-content">
+<a class="auth-logo" href="index.html">
+<span class="auth-logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span>Forty Portal</span>
+</a>
+<div class="auth-content-inner">
+<div class="auth-card">
+<div class="auth-card-header">
+<div class="auth-icon success">
+<i class="ph ph-envelope-open"></i>
+</div>
+<h1 class="auth-title">Check your inbox</h1>
+<p class="auth-subtitle">
+              We've sent a verification link to <span class="auth-mail-highlight"><a class="__cf_email__" data-cfemail="e983868187c78d868ca98c91888499858cc78a8684" href="/cdn-cgi/l/email-protection">[email protected]</a></span>.
+              Click the link in the email to activate your account.
+            </p>
+</div>
+<form class="auth-form">
+<button class="auth-submit" type="submit">Open Email App <i class="ph ph-arrow-square-out"></i></button>
+</form>
+<p class="auth-resend">
+            Didn't receive the email? <a class="auth-link" data-resend="" href="#">Resend</a>
+<span data-resend-timer=""></span>
+</p>
+<p class="auth-footer-text">
+<a class="auth-back" href="auth-login.html"><i class="ph ph-arrow-left"></i> Back to sign in</a>
+</p>
+</div>
+</div>
+<!-- Footer -->
+<footer class="auth-footer">
+<div class="footer-copyright">
+          © 2026 <a href="#">Forty Portal</a>. All Rights Reserved.
+        </div>
+<div class="footer-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Help</a>
+</div>
+<div class="credits">
+<!-- All the links in the footer should remain intact. -->
+<!-- You can delete the links only if you purchased the pro version. -->
+<!-- Licensing information: https://bootstrapmade.com/license/ -->
+<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+</div>
+</footer>
+</div>
+</div>
+<!-- Vendor JS Files -->
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../vendors/apexcharts/apexcharts.min.js"></script>
+<script src="../../vendors/chart.js/chart.umd.js"></script>
+<script src="../../vendors/echarts/echarts.min.js"></script>
+<script src="../../vendors/simple-datatables/simple-datatables.js"></script>
+<script src="../../vendors/quill/quill.js"></script>
+<script src="../../vendors/tinymce/tinymce.min.js"></script>
+<script src="../../vendors/choices.js/choices.min.js"></script>
+<script src="../../vendors/flatpickr/flatpickr.min.js"></script>
+<script src="../../vendors/php-email-form/validate.js"></script>
+<!-- Template Main JS Files -->
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/main.js"></script>
+<!-- App Sidebar Toggle (for app pages with sidebars) -->
+<script src="assets/js/apps-sidebar-toggle.js"></script>
+<script>
+    // Resend cooldown timer
+    document.addEventListener('DOMContentLoaded', function() {
+      const resend = document.querySelector('[data-resend]');
+      const timer = document.querySelector('[data-resend-timer]');
+      if (!resend || !timer) return;
+      resend.addEventListener('click', function(e) {
+        e.preventDefault();
+        let seconds = 30;
+        resend.style.pointerEvents = 'none';
+        resend.style.opacity = '0.5';
+        timer.textContent = ' (' + seconds + 's)';
+        const interval = setInterval(function() {
+          seconds--;
+          timer.textContent = ' (' + seconds + 's)';
+          if (seconds <= 0) {
+            clearInterval(interval);
+            timer.textContent = '';
+            resend.style.pointerEvents = '';
+            resend.style.opacity = '';
+          }
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>

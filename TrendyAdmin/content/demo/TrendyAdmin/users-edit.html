@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit User — Zanele Mokoena · Forty Portal</title>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="Forty Portal - Agency Admin" name="description"/>
+<meta content="admin, dashboard, bootstrap" name="keywords"/>
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Google Fonts - Plus Jakarta Sans (body) + Outfit (headings) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Vendor CSS Files -->
+<link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../../vendors/remixicon/remixicon.css" rel="stylesheet"/>
+<link href="../../vendors/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+<link href="../../vendors/phosphor-icons/phosphor-icons.css" rel="stylesheet"/>
+<link href="../../vendors/lucide-icons/lucide.css" rel="stylesheet"/>
+<link href="../../vendors/simple-datatables/style.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.snow.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.bubble.css" rel="stylesheet"/>
+<link href="../../vendors/choices.js/choices.min.css" rel="stylesheet"/>
+<link href="../../vendors/flatpickr/flatpickr.min.css" rel="stylesheet"/>
+<!-- Template Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet"/>
+<!-- =======================================================
+    * Template Name: Forty Portal - Agency Admin
+    * Template URL: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/
+    * Updated: Jul 29, 2026 with Bootstrap v5.3.8
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="header-inner">
+<!-- Header Left -->
+<div class="header-left">
+<button class="sidebar-toggle" title="Toggle Sidebar">
+<i class="ph ph-list"></i>
+</button>
+<a class="header-logo" href="index.html">
+<span class="header-logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span class="header-logo-text">Forty Portal</span>
+</a>
+<!-- Apps Quick Access -->
+<div class="header-action dropdown apps-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Quick Access">
+<i class="ph ph-dots-nine"></i>
+</button>
+<div class="dropdown-menu">
+<div class="apps-menu-header">
+<h6>Quick Access</h6>
+<span>Jump straight into an app</span>
+</div>
+<div class="apps-grid">
+<a class="apps-grid-item" href="apps-chat.html">
+<span class="apps-grid-icon"><i class="ph ph-chat-circle-dots"></i></span>
+<span>Chat</span>
+</a>
+<a class="apps-grid-item" href="apps-email.html">
+<span class="apps-grid-icon"><i class="ph ph-envelope"></i></span>
+<span>Email</span>
+</a>
+<a class="apps-grid-item" href="apps-calendar.html">
+<span class="apps-grid-icon"><i class="ph ph-calendar-blank"></i></span>
+<span>Calendar</span>
+</a>
+<a class="apps-grid-item" href="apps-kanban.html">
+<span class="apps-grid-icon"><i class="ph ph-kanban"></i></span>
+<span>Kanban</span>
+</a>
+<a class="apps-grid-item" href="apps-file-manager.html">
+<span class="apps-grid-icon"><i class="ph ph-folder-open"></i></span>
+<span>Files</span>
+</a>
+<a class="apps-grid-item" href="apps-todo.html">
+<span class="apps-grid-icon"><i class="ph ph-check-square"></i></span>
+<span>Todo</span>
+</a>
+<a class="apps-grid-item" href="apps-contacts.html">
+<span class="apps-grid-icon"><i class="ph ph-address-book"></i></span>
+<span>Contacts</span>
+</a>
+<a class="apps-grid-item" href="apps-support.html">
+<span class="apps-grid-icon"><i class="ph ph-headset"></i></span>
+<span>Support</span>
+</a>
+<a class="apps-grid-item" href="invoice-list.html">
+<span class="apps-grid-icon"><i class="ph ph-receipt"></i></span>
+<span>Invoices</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Header Search (Desktop) -->
+<div class="header-search">
+<form action="search-results.html" class="search-form" method="GET">
+<button type="submit"><i class="ph ph-magnifying-glass"></i></button>
+<input autocomplete="off" name="q" placeholder="Search anything..." type="search"/>
+<span class="search-hint">â??K</span>
+</form>
+</div>
+<!-- Header Right -->
+<div class="header-right">
+<!-- Desktop Actions (hidden on mobile, shown in mobile menu) -->
+<div class="header-actions-desktop">
+<!-- Quick Create -->
+<div class="dropdown create-dropdown">
+<button aria-expanded="false" class="create-btn dropdown-toggle" data-bs-toggle="dropdown">
+<i class="ph ph-plus"></i>
+<span>Create</span>
+</button>
+<div class="dropdown-menu dropdown-menu-end create-menu">
+<a class="dropdown-item" href="apps-kanban.html">
+<span class="create-item-icon"><i class="ph ph-kanban"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Project</span>
+<span class="create-item-sub">Start a kanban board</span>
+</span>
+</a>
+<a class="dropdown-item" href="apps-todo.html">
+<span class="create-item-icon"><i class="ph ph-check-square"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Task</span>
+<span class="create-item-sub">Add to your todo list</span>
+</span>
+</a>
+<a class="dropdown-item" href="apps-contacts.html">
+<span class="create-item-icon"><i class="ph ph-user-plus"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Contact</span>
+<span class="create-item-sub">Save a new person</span>
+</span>
+</a>
+<a class="dropdown-item" href="invoice-list.html">
+<span class="create-item-icon"><i class="ph ph-receipt"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Invoice</span>
+<span class="create-item-sub">Bill a customer</span>
+</span>
+</a>
+</div>
+</div>
+<div class="header-divider"></div>
+<!-- Theme Toggle -->
+<button class="header-action theme-toggle" title="Toggle Theme">
+<i class="ph ph-moon icon-dark"></i>
+<i class="ph ph-sun icon-light"></i>
+</button>
+<!-- Fullscreen Toggle -->
+<button class="header-action fullscreen-toggle" onclick="toggleFullscreen()" title="Fullscreen">
+<i class="ph ph-arrows-out icon-enter"></i>
+<i class="ph ph-arrows-in icon-exit"></i>
+</button>
+<!-- Messages -->
+<div class="header-action dropdown messages-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Messages">
+<i class="ph ph-chat-teardrop-text"></i>
+<span class="badge">2</span>
+</button>
+<div class="dropdown-menu dropdown-menu-end">
+<div class="messages-header">
+<h6>Messages</h6>
+<a href="apps-chat.html">View all</a>
+</div>
+<div class="messages-list">
+<a class="message-item unread" href="apps-chat.html">
+<span class="message-avatar">
+<img alt="Ayesha Nkosi" src="assets/img/avatars/avatar-2.webp"/>
+<span class="message-status"></span>
+</span>
+<span class="message-content">
+<span class="message-name">Ayesha Nkosi</span>
+<span class="message-text">The new dashboard mockups look amazing! ð??¥</span>
+</span>
+<span class="message-time">2m</span>
+</a>
+<a class="message-item unread" href="apps-chat.html">
+<span class="message-avatar">
+<img alt="Sipho Dlamini" src="assets/img/avatars/avatar-3.webp"/>
+</span>
+<span class="message-content">
+<span class="message-name">Sipho Dlamini</span>
+<span class="message-text">Can you review my PR when you get a chance?</span>
+</span>
+<span class="message-time">1h</span>
+</a>
+<a class="message-item" href="apps-chat.html">
+<span class="message-avatar">
+<img alt="Zanele Mokoena" src="assets/img/avatars/avatar-4.webp"/>
+</span>
+<span class="message-content">
+<span class="message-name">Zanele Mokoena</span>
+<span class="message-text">Meeting moved to 3pm tomorrow</span>
+</span>
+<span class="message-time">3h</span>
+</a>
+</div>
+<div class="messages-footer">
+<a href="apps-chat.html">Open chat <i class="ph ph-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- Notifications -->
+<div class="header-action dropdown notification-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Notifications">
+<i class="ph ph-bell"></i>
+<span class="badge">3</span>
+</button>
+<div class="dropdown-menu dropdown-menu-end">
+<div class="notification-header">
+<h6>You have 3 new notifications</h6>
+<a class="notification-mark-read" data-notification-action="mark-all-read" href="#" title="Mark all as read">
+<i class="ph ph-checks"></i>
+</a>
+</div>
+<div class="notification-list">
+<div class="notification-item unread">
+<span class="notification-icon success">
+<i class="ph ph-check-circle"></i>
+</span>
+<span class="notification-content">
+<span class="notification-title">Order Completed</span>
+<span class="notification-text">Your order #12345 has been delivered</span>
+</span>
+<span class="notification-meta">
+<span class="notification-time">5m</span>
+<span class="notification-dot"></span>
+</span>
+</div>
+<div class="notification-item unread">
+<span class="notification-icon warning">
+<i class="ph ph-warning"></i>
+</span>
+<span class="notification-content">
+<span class="notification-title">Low Storage</span>
+<span class="notification-text">Server storage is running low (85% used)</span>
+</span>
+<span class="notification-meta">
+<span class="notification-time">1h</span>
+<span class="notification-dot"></span>
+</span>
+</div>
+<div class="notification-item">
+<span class="notification-icon info">
+<i class="ph ph-info"></i>
+</span>
+<span class="notification-content">
+<span class="notification-title">New Feature</span>
+<span class="notification-text">Dark mode is now available</span>
+</span>
+<span class="notification-meta">
+<span class="notification-time">2h</span>
+<span class="notification-dot"></span>
+</span>
+</div>
+</div>
+<div class="notification-footer">
+<a href="notifications.html">View all</a>
+<a href="settings.html">Settings</a>
+</div>
+</div>
+</div>
+<div class="header-divider"></div>
+<!-- User Dropdown -->
+<div class="header-action dropdown user-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown">
+<img alt="User" class="avatar" src="assets/img/profile-img.webp"/>
+<span class="user-name">Thobane Sithole</span>
+<i class="ph ph-caret-down user-caret"></i>
+</button>
+<div class="dropdown-menu dropdown-menu-end">
+<div class="user-menu-card">
+<span class="user-menu-avatar">
+<img alt="User" src="assets/img/profile-img.webp"/>
+</span>
+<span class="user-menu-name">Thobane Sithole</span>
+<span class="user-menu-mail"><a class="__cf_email__" data-cfemail="a6ccc9cec8e6d2d4c3c8c2dfc7c2cbcfc888c5c9cb" href="/cdn-cgi/l/email-protection">[email protected]</a></span>
+<span class="user-menu-role">Administrator</span>
+</div>
+<div class="user-menu-body">
+<a class="dropdown-item" href="profile.html">
+<span class="user-menu-item-icon"><i class="ph ph-user"></i></span>
+                  My Profile
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+<a class="dropdown-item" href="settings.html">
+<span class="user-menu-item-icon"><i class="ph ph-gear"></i></span>
+                  Settings
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+<a class="dropdown-item" href="activity.html">
+<span class="user-menu-item-icon"><i class="ph ph-pulse"></i></span>
+                  Activity Log
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+<a class="dropdown-item" href="invoice-list.html">
+<span class="user-menu-item-icon"><i class="ph ph-receipt"></i></span>
+                  Billing
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+</div>
+<div class="user-menu-footer">
+<a class="user-menu-signout" href="auth-login.html">
+<i class="ph ph-sign-out"></i> Sign Out
+                </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Actions (visible only on mobile) -->
+<div class="header-actions-mobile">
+<!-- Search Toggle (Mobile) -->
+<button class="header-action search-toggle" title="Search">
+<i class="ph ph-magnifying-glass"></i>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="header-action mobile-menu-toggle" title="More">
+<i class="ph ph-dots-three-vertical"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Mobile Search -->
+<div class="mobile-search">
+<form action="search-results.html" class="search-form" method="GET">
+<input autocomplete="off" name="q" placeholder="Search anything..." type="search"/>
+<button type="submit"><i class="ph ph-magnifying-glass"></i></button>
+</form>
+</div>
+<!-- Mobile Header Menu -->
+<div class="mobile-header-menu">
+<div class="mobile-header-menu-content">
+<!-- Theme Toggle -->
+<button class="mobile-menu-item theme-toggle" title="Toggle Theme">
+<i class="ph ph-moon icon-dark"></i>
+<i class="ph ph-sun icon-light"></i>
+<span class="mobile-menu-label">Theme</span>
+</button>
+<!-- Fullscreen Toggle -->
+<button class="mobile-menu-item fullscreen-toggle" onclick="toggleFullscreen()" title="Fullscreen">
+<i class="ph ph-arrows-out icon-enter"></i>
+<i class="ph ph-arrows-in icon-exit"></i>
+<span class="mobile-menu-label">Fullscreen</span>
+</button>
+<!-- Messages -->
+<a class="mobile-menu-item" href="apps-chat.html">
+<i class="ph ph-chat-teardrop-text"></i>
+<span class="badge">2</span>
+<span class="mobile-menu-label">Messages</span>
+</a>
+<!-- Notifications -->
+<a class="mobile-menu-item" href="notifications.html">
+<i class="ph ph-bell"></i>
+<span class="badge">3</span>
+<span class="mobile-menu-label">Notifications</span>
+</a>
+<!-- Profile -->
+<a class="mobile-menu-item" href="profile.html">
+<i class="ph ph-user"></i>
+<span class="mobile-menu-label">Profile</span>
+</a>
+<!-- Sign Out -->
+<a class="mobile-menu-item mobile-menu-item-danger" href="auth-login.html">
+<i class="ph ph-sign-out"></i>
+<span class="mobile-menu-label">Sign Out</span>
+</a>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="sidebar">
+<!-- Sidebar Header -->
+<div class="sidebar-header">
+<a class="sidebar-logo" href="index.html">
+<span class="sidebar-logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span class="sidebar-logo-text">Forty Portal</span>
+</a>
+<button class="sidebar-close">
+<i class="ph ph-x"></i>
+</button>
+</div>
+<!-- Sidebar Navigation -->
+<nav class="sidebar-nav">
+<ul class="nav-menu">
+<li class="nav-heading"><span>Overview</span></li>
+<li class="nav-item">
+<a class="nav-link" href="index.html">
+<span class="nav-icon"><i class="ph ph-house"></i></span>
+<span class="nav-text">Home</span>
+</a>
+</li>
+<!-- Dashboards Submenu -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-gauge"></i></span>
+<span class="nav-text">Dashboards</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="dashboard-sales.html">Sales</a></li>
+<li><a class="nav-link" href="dashboard-analytics.html">Analytics</a></li>
+<li><a class="nav-link" href="dashboard-crm.html">CRM</a></li>
+<li><a class="nav-link" href="dashboard-marketing.html">Marketing</a></li>
+<li><a class="nav-link" href="dashboard-projects.html">Projects</a></li>
+<li><a class="nav-link" href="dashboard-finance.html">Finance</a></li>
+</ul>
+</li>
+<!-- Users -->
+<li class="nav-item has-submenu open">
+<a aria-expanded="true" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-users"></i></span>
+<span class="nav-text">Users</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu show">
+<li><a class="nav-link" href="users.html">Users List</a></li>
+<li><a class="nav-link" href="users-view.html">User View</a></li>
+<li><a class="nav-link active" href="users-edit.html">User Edit</a></li>
+<li><a class="nav-link" href="profile.html">Profile</a></li>
+<!-- 3rd Level - Settings submenu -->
+<li class="has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+                Settings
+                <i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="settings.html">Account</a></li>
+<li><a class="nav-link" href="notifications.html">Notifications</a></li>
+<li><a class="nav-link" href="activity.html">Activity</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="roles.html">Roles &amp; Permissions</a></li>
+</ul>
+</li>
+<!-- Authentication -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-shield-check"></i></span>
+<span class="nav-text">Authentication</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="auth-login.html">Login</a></li>
+<li><a class="nav-link" href="auth-register.html">Register</a></li>
+<li><a class="nav-link" href="auth-forgot-password.html">Forgot Password</a></li>
+<li><a class="nav-link" href="auth-reset-password.html">Reset Password</a></li>
+<li><a class="nav-link" href="auth-verify-email.html">Email Verification</a></li>
+<li><a class="nav-link" href="auth-two-factor.html">Two Factor Auth</a></li>
+<li><a class="nav-link" href="auth-lock-screen.html">Lock Screen</a></li>
+</ul>
+</li>
+<!-- Apps Section -->
+<li class="nav-heading"><span>Apps</span></li>
+<li class="nav-item">
+<a class="nav-link" href="apps-calendar.html">
+<span class="nav-icon"><i class="ph ph-calendar-blank"></i></span>
+<span class="nav-text">Calendar</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-kanban.html">
+<span class="nav-icon"><i class="ph ph-kanban"></i></span>
+<span class="nav-text">Kanban Board</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-chat.html">
+<span class="nav-icon"><i class="ph ph-chat-circle-dots"></i></span>
+<span class="nav-text">Chat</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-contacts.html">
+<span class="nav-icon"><i class="ph ph-address-book"></i></span>
+<span class="nav-text">Contacts</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-file-manager.html">
+<span class="nav-icon"><i class="ph ph-folder-open"></i></span>
+<span class="nav-text">File Manager</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-email.html">
+<span class="nav-icon"><i class="ph ph-envelope"></i></span>
+<span class="nav-text">Email</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-todo.html">
+<span class="nav-icon"><i class="ph ph-check-square"></i></span>
+<span class="nav-text">Todo List</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-support.html">
+<span class="nav-icon"><i class="ph ph-headset"></i></span>
+<span class="nav-text">Support Center</span>
+</a>
+</li>
+<!-- UI Elements Section -->
+<li class="nav-heading"><span>UI Elements</span></li>
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-puzzle-piece"></i></span>
+<span class="nav-text">Components</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="components-alerts.html">Alerts</a></li>
+<li><a class="nav-link" href="components-accordion.html">Accordion</a></li>
+<li><a class="nav-link" href="components-badges.html">Badges</a></li>
+<li><a class="nav-link" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+<li><a class="nav-link" href="components-buttons.html">Buttons</a></li>
+<li><a class="nav-link" href="components-cards.html">Cards</a></li>
+<li><a class="nav-link" href="components-carousel.html">Carousel</a></li>
+<li><a class="nav-link" href="components-dropdowns.html">Dropdowns</a></li>
+<li><a class="nav-link" href="components-list-group.html">List Group</a></li>
+<li><a class="nav-link" href="components-modal.html">Modal</a></li>
+<li><a class="nav-link" href="components-nav-tabs.html">Navs &amp; Tabs</a></li>
+<li><a class="nav-link" href="components-offcanvas.html">Offcanvas</a></li>
+<li><a class="nav-link" href="components-pagination.html">Pagination</a></li>
+<li><a class="nav-link" href="components-popovers.html">Popovers</a></li>
+<li><a class="nav-link" href="components-progress.html">Progress</a></li>
+<li><a class="nav-link" href="components-spinners.html">Spinners</a></li>
+<li><a class="nav-link" href="components-toasts.html">Toasts</a></li>
+<li><a class="nav-link" href="components-tooltips.html">Tooltips</a></li>
+</ul>
+</li>
+<!-- Widgets -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-stack"></i></span>
+<span class="nav-text">Widgets</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="widgets-cards.html">Cards</a></li>
+<li><a class="nav-link" href="widgets-banners.html">Banners</a></li>
+<li><a class="nav-link" href="widgets-charts.html">Charts</a></li>
+<li><a class="nav-link" href="widgets-apps.html">Apps</a></li>
+<li><a class="nav-link" href="widgets-data.html">Data</a></li>
+</ul>
+</li>
+<!-- Forms Section -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-list-checks"></i></span>
+<span class="nav-text">Forms</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="forms-elements.html">Form Elements</a></li>
+<li><a class="nav-link" href="forms-layouts.html">Form Layouts</a></li>
+<li><a class="nav-link" href="forms-validation.html">Validation</a></li>
+<li><a class="nav-link" href="forms-wizard.html">Wizard</a></li>
+<li><a class="nav-link" href="forms-editors.html">Rich Editors</a></li>
+<li><a class="nav-link" href="forms-pickers.html">Date/Time Pickers</a></li>
+<li><a class="nav-link" href="forms-select.html">Advanced Select</a></li>
+<li><a class="nav-link" href="forms-upload.html">File Upload</a></li>
+</ul>
+</li>
+<!-- Tables Section -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-table"></i></span>
+<span class="nav-text">Tables</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="tables-basic.html">Basic Tables</a></li>
+<li><a class="nav-link" href="tables-datatables.html">DataTables</a></li>
+<li><a class="nav-link" href="tables-responsive.html">Responsive Tables</a></li>
+</ul>
+</li>
+<!-- Charts Section -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-chart-bar"></i></span>
+<span class="nav-text">Charts</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="charts-apexcharts.html">ApexCharts</a></li>
+<li><a class="nav-link" href="charts-chartjs.html">Chart.js</a></li>
+<li><a class="nav-link" href="charts-echarts.html">ECharts</a></li>
+</ul>
+</li>
+<!-- Icons Section -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-diamond"></i></span>
+<span class="nav-text">Icons</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="icons-bootstrap.html">Bootstrap Icons</a></li>
+<li><a class="nav-link" href="icons-remixicon.html">Remix Icons</a></li>
+<li><a class="nav-link" href="icons-fontawesome.html">Font Awesome</a></li>
+<li><a class="nav-link" href="icons-phosphor.html">Phosphor Icons</a></li>
+<li><a class="nav-link" href="icons-lucide.html">Lucide Icons</a></li>
+</ul>
+</li>
+<!-- Pages Section -->
+<li class="nav-heading"><span>Pages</span></li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">
+<span class="nav-icon"><i class="ph ph-envelope-simple"></i></span>
+<span class="nav-text">Contact</span>
+</a>
+</li>
+<!-- Invoices -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-receipt"></i></span>
+<span class="nav-text">Invoices</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="invoice-list.html">Invoice List</a></li>
+<li><a class="nav-link" href="invoice.html">Invoice View</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="pricing.html">
+<span class="nav-icon"><i class="ph ph-tag"></i></span>
+<span class="nav-text">Pricing</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="faq.html">
+<span class="nav-icon"><i class="ph ph-question"></i></span>
+<span class="nav-text">FAQ</span>
+</a>
+</li>
+<!-- Error Pages -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-warning"></i></span>
+<span class="nav-text">Error Pages</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="error-404.html">404 Not Found</a></li>
+<li><a class="nav-link" href="error-403.html">403 Forbidden</a></li>
+<li><a class="nav-link" href="error-500.html">500 Server Error</a></li>
+<li><a class="nav-link" href="error-maintenance.html">Maintenance</a></li>
+<li><a class="nav-link" href="error-coming-soon.html">Coming Soon</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="timeline.html">
+<span class="nav-icon"><i class="ph ph-clock-counter-clockwise"></i></span>
+<span class="nav-text">Timeline</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="search-results.html">
+<span class="nav-icon"><i class="ph ph-magnifying-glass"></i></span>
+<span class="nav-text">Search Results</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="blank.html">
+<span class="nav-icon"><i class="ph ph-file"></i></span>
+<span class="nav-text">Blank Page</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Sidebar Footer - User Card -->
+<div class="sidebar-footer">
+<div class="sidebar-user">
+<a class="sidebar-user-link" href="profile.html">
+<span class="sidebar-user-avatar">
+<img alt="User" src="assets/img/profile-img.webp"/>
+<span class="sidebar-user-status"></span>
+</span>
+<span class="sidebar-user-info">
+<span class="sidebar-user-name">Thobane Sithole</span>
+<span class="sidebar-user-role">Administrator</span>
+</span>
+</a>
+<div class="sidebar-user-actions">
+<a class="sidebar-user-action" href="settings.html" title="Settings">
+<i class="ph ph-gear"></i>
+</a>
+<a class="sidebar-user-action sidebar-user-logout" href="auth-login.html" title="Logout">
+<i class="ph ph-sign-out"></i>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Sidebar Overlay (Mobile) -->
+<div class="sidebar-overlay"></div>
+<!-- Main Content -->
+<main class="main">
+<div class="main-content page-users-edit">
+<!-- Page Header -->
+<div class="ue-header">
+<div class="ue-header-left">
+<a class="ue-back" href="users.html" title="Back to Users"><i class="ph ph-arrow-left"></i></a>
+<div>
+<h1 class="ue-title">Edit User</h1>
+<p class="ue-subtitle">Update Zanele Mokoena's profile, role and security settings.</p>
+</div>
+</div>
+<div class="ue-header-actions">
+<a class="users-btn-ghost" href="users.html">Cancel</a>
+<button class="users-btn-primary" form="editUserForm" type="submit">
+<i class="ph ph-check"></i> Save Changes
+          </button>
+</div>
+</div>
+<form id="editUserForm">
+<div class="ue-layout">
+<!-- Left Column -->
+<div class="ue-side">
+<!-- Identity Card -->
+<div class="card">
+<div class="card-body ue-identity">
+<span class="ue-avatar">
+<img alt="Zanele Mokoena" id="profilePreview" src="assets/img/avatars/avatar-7.webp"/>
+<label class="ue-avatar-edit" for="profileImage" title="Change photo">
+<i class="ph ph-camera"></i>
+</label>
+<input accept="image/*" hidden="" id="profileImage" type="file"/>
+</span>
+<div class="ue-identity-name">Zanele Mokoena</div>
+<div class="ue-identity-mail">zanele.f@fitss.co.za</div>
+<span class="role-chip manager"><span class="role-chip-dot"></span>Manager</span>
+</div>
+<div class="ue-identity-footer">
+<div class="ue-field">
+<label class="form-label">Account Status</label>
+<select class="form-select" id="ue-status"><option selected="">Active</option>
+<option>Inactive</option>
+<option>Suspended</option>
+<option>Pending</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Security Toggles -->
+<div class="card">
+<div class="dash-card-header">
+<div>
+<h5 class="dash-card-title">Security</h5>
+<span class="dash-card-subtitle">Account verification &amp; access</span>
+</div>
+</div>
+<div class="card-body">
+<div class="ue-toggle-list">
+<div class="ue-toggle">
+<span class="ue-toggle-icon"><i class="ph ph-envelope"></i></span>
+<div class="ue-toggle-text">
+<span class="ue-toggle-title">Email Verified</span>
+<span class="ue-toggle-sub">User has confirmed their email</span>
+</div>
+<div class="form-check form-switch">
+<input checked="" class="form-check-input" id="emailVerified" type="checkbox"/>
+</div>
+</div>
+<div class="ue-toggle">
+<span class="ue-toggle-icon"><i class="ph ph-shield-check"></i></span>
+<div class="ue-toggle-text">
+<span class="ue-toggle-title">Two-Factor Auth</span>
+<span class="ue-toggle-sub">Require 2FA at sign-in</span>
+</div>
+<div class="form-check form-switch">
+<input checked="" class="form-check-input" id="twoFactor" type="checkbox"/>
+</div>
+</div>
+<div class="ue-toggle">
+<span class="ue-toggle-icon"><i class="ph ph-key"></i></span>
+<div class="ue-toggle-text">
+<span class="ue-toggle-title">Force Password Change</span>
+<span class="ue-toggle-sub">Prompt on next login</span>
+</div>
+<div class="form-check form-switch">
+<input class="form-check-input" id="forcePasswordChange" type="checkbox"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="card ue-danger-card">
+<div class="card-body">
+<div class="ue-danger-head">
+<i class="ph ph-warning"></i>
+<div>
+<span class="ue-danger-title">Danger Zone</span>
+<span class="ue-danger-sub">Permanently remove this user and all their data.</span>
+</div>
+</div>
+<button class="ue-danger-btn" data-bs-target="#deleteUserModal" data-bs-toggle="modal" type="button">
+<i class="ph ph-trash"></i> Delete User
+                </button>
+</div>
+</div>
+</div>
+<!-- Right Column - Form Sections -->
+<div class="ue-main">
+<!-- Personal Information -->
+<div class="card">
+<div class="ue-section-header">
+<span class="ue-section-icon"><i class="ph ph-user"></i></span>
+<div>
+<h5 class="dash-card-title">Personal Information</h5>
+<span class="dash-card-subtitle">Basic identity and contact details</span>
+</div>
+</div>
+<div class="card-body">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label">First Name <span class="ue-req">*</span></label>
+<input class="form-control" required="" type="text" value="Zanele"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Last Name <span class="ue-req">*</span></label>
+<input class="form-control" required="" type="text" value="Mokoena"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Email Address <span class="ue-req">*</span></label>
+<input class="form-control" required="" type="email" value="zanele.f@fitss.co.za"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Phone Number</label>
+<input class="form-control" type="tel" id="ue-phone" value="+27 82 000 0006"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Date of Birth</label>
+<input class="form-control" type="date" value="1992-06-15"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Gender</label>
+<select class="form-select">
+<option selected="">Female</option>
+<option>Male</option>
+<option>Non-binary</option>
+<option>Prefer not to say</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Work Information -->
+<div class="card">
+<div class="ue-section-header">
+<span class="ue-section-icon"><i class="ph ph-briefcase"></i></span>
+<div>
+<h5 class="dash-card-title">Work Information</h5>
+<span class="dash-card-subtitle">Position and organizational details</span>
+</div>
+</div>
+<div class="card-body">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label">Department</label>
+<select class="form-select">
+<option>Engineering</option>
+<option>Product</option>
+<option>Design</option>
+<option>Marketing</option>
+<option>Sales</option>
+<option>Support</option>
+<option selected="">Finance</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label">Job Title</label>
+<input class="form-control" type="text" value="Finance Manager"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Manager</label>
+<select class="form-select">
+<option selected="">Thobane Sithole</option>
+<option>Michael Chen</option>
+<option>Jessica Taylor</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label">Office Location</label>
+<select class="form-select">
+<option>Johannesburg HQ</option>
+<option>Cape Town</option>
+<option>London</option>
+<option selected="">Remote</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label">Employee ID</label>
+<input class="form-control" readonly="" type="text" value="EMP-00006"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Start Date</label>
+<input class="form-control" type="date" value="2023-02-01"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Role & Permissions -->
+<div class="card">
+<div class="ue-section-header">
+<span class="ue-section-icon"><i class="ph ph-lock-key"></i></span>
+<div>
+<h5 class="dash-card-title">Role &amp; Permissions</h5>
+<span class="dash-card-subtitle">Access level and team assignments</span>
+</div>
+</div>
+<div class="card-body">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label">Role <span class="ue-req">*</span></label>
+<select class="form-select" required="">
+<option>Admin</option>
+<option selected="">Manager</option>
+<option>User</option>
+<option>Viewer</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label">Teams</label>
+<select class="form-select" multiple="" size="4">
+<option selected="">Finance Team</option>
+<option>Projects Team</option>
+<option>Operations Team</option>
+<option>Leadership Team</option>
+</select>
+<div class="ue-hint">Hold â?? / Ctrl to select multiple teams.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Change Password -->
+<div class="card">
+<div class="ue-section-header">
+<span class="ue-section-icon"><i class="ph ph-password"></i></span>
+<div>
+<h5 class="dash-card-title">Change Password</h5>
+<span class="dash-card-subtitle">Leave blank to keep the current password</span>
+</div>
+</div>
+<div class="card-body">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label">New Password</label>
+<input class="form-control" placeholder="Enter new password" type="password"/>
+</div>
+<div class="col-md-6">
+<label class="form-label">Confirm Password</label>
+<input class="form-control" placeholder="Confirm new password" type="password"/>
+</div>
+</div>
+<div class="ue-hint mt-2"><i class="ph ph-info"></i> Minimum 8 characters with at least one number and one symbol.</div>
+</div>
+</div>
+<!-- Bottom Save Bar -->
+<div class="ue-save-bar">
+<span class="ue-save-note"><i class="ph ph-clock-counter-clockwise"></i> Last updated today by Thobane Sithole</span>
+<div class="ue-save-actions">
+<a class="users-btn-ghost" href="users.html">Cancel</a>
+<button class="users-btn-primary" type="submit"><i class="ph ph-check"></i> Save Changes</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+<!-- Delete User Modal -->
+<div class="modal fade" id="deleteUserModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content users-modal">
+<div class="modal-header users-modal-header danger">
+<span class="users-modal-icon danger"><i class="ph ph-trash"></i></span>
+<div>
+<h5 class="modal-title">Delete User</h5>
+<span class="users-modal-subtitle">This action cannot be undone</span>
+</div>
+<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p class="mb-2">Are you sure you want to permanently delete <strong>Zanele Mokoena</strong>?</p>
+<p class="text-muted small mb-0">All of their data â?? projects, files, and activity history â?? will be removed from the workspace.</p>
+</div>
+<div class="modal-footer">
+<button class="users-btn-ghost" data-bs-dismiss="modal" type="button">Cancel</button>
+<button class="ue-danger-btn solid" type="button"><i class="ph ph-trash"></i> Delete User</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-brand">
+<span class="footer-brand-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span class="footer-copyright">
+            © 2026 <a href="#">Forty Portal</a>. All Rights Reserved.
+          </span>
+</div>
+<div class="footer-links">
+<a href="#">About</a>
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Contact</a>
+</div>
+<div class="footer-credits">
+<div class="credits">
+<!-- All the links in the footer should remain intact. -->
+<!-- You can delete the links only if you purchased the pro version. -->
+<!-- Licensing information: https://bootstrapmade.com/license/ -->
+<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- Back to Top -->
+<a class="back-to-top" href="#">
+<i class="ph ph-arrow-up"></i>
+</a>
+<!-- Vendor JS Files -->
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../vendors/apexcharts/apexcharts.min.js"></script>
+<script src="../../vendors/chart.js/chart.umd.js"></script>
+<script src="../../vendors/echarts/echarts.min.js"></script>
+<script src="../../vendors/simple-datatables/simple-datatables.js"></script>
+<script src="../../vendors/quill/quill.js"></script>
+<script src="../../vendors/tinymce/tinymce.min.js"></script>
+<script src="../../vendors/choices.js/choices.min.js"></script>
+<script src="../../vendors/flatpickr/flatpickr.min.js"></script>
+<script src="../../vendors/php-email-form/validate.js"></script>
+<!-- Template Main JS Files -->
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/main.js"></script>
+<!-- App Sidebar Toggle (for app pages with sidebars) -->
+<script src="assets/js/apps-sidebar-toggle.js"></script>
+<script src="assets/js/portal.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  if (!FP.requireAuth()) return;
+  FP.initLogout();
+  FP.initUserDisplay();
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  if (!id) return;
+  try {
+    const u = await FP.apiFetch('/users/' + id);
+    if (!u) return;
+    // Populate identity card
+    const identityName = document.querySelector('.ue-identity-name');
+    const identityMail = document.querySelector('.ue-identity-mail');
+    if (identityName) identityName.textContent = u.name || '';
+    if (identityMail) identityMail.textContent = u.email || '';
+    // Populate form fields
+    const [first, ...rest] = (u.name||'').split(' ');
+    const el = id => document.getElementById(id);
+    if (el('ue-first-name')) el('ue-first-name').value = first || '';
+    if (el('ue-last-name'))  el('ue-last-name').value  = rest.join(' ') || '';
+    if (el('ue-email'))      el('ue-email').value       = u.email || '';
+    if (el('ue-phone'))      el('ue-phone').value       = u.phone || '';
+    if (el('ue-status'))     el('ue-status').value      = u.status || 'Active';
+    // Work info inputs by label
+    document.querySelectorAll('.ue-main input[type="text"]').forEach(inp => {
+      const lbl = inp.closest('.col-md-6,.col-12')?.querySelector('label')?.textContent?.toLowerCase() || '';
+      if (lbl.includes('job') || lbl.includes('title')) inp.value = u.job_title   || inp.value;
+      if (lbl.includes('department'))                   inp.value = u.department  || inp.value;
+    });
+    // Role select
+    document.querySelectorAll('.ue-main select').forEach(sel => {
+      const lbl = sel.closest('.col-md-6,.col-12')?.querySelector('label')?.textContent?.toLowerCase() || '';
+      if (lbl.includes('role')) { sel.value = u.role || sel.value; }
+    });
+    // Update page title
+    document.title = 'Edit ' + (u.name||'User') + ' - Forty Portal';
+    const pageSubtitle = document.querySelector('.ue-subtitle');
+    if (pageSubtitle) pageSubtitle.textContent = "Update " + (u.name||'') + "'s profile, role and settings.";
+  } catch(e) { FP.showError('Could not load user: ' + e.message); }
+  // Handle form submit — PATCH /api/users/:id
+  const form = document.getElementById('editUserForm');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const el = id => document.getElementById(id);
+      const first = el('ue-first-name')?.value?.trim() || '';
+      const last  = el('ue-last-name')?.value?.trim()  || '';
+      const body = {};
+      if (first || last) body.name = (first + ' ' + last).trim();
+      if (el('ue-phone')?.value)  body.phone = el('ue-phone').value.trim();
+      if (el('ue-status')?.value) body.status = el('ue-status').value;
+      // Work info
+      document.querySelectorAll('.ue-main input[type="text"]').forEach(inp => {
+        const lbl = inp.closest('.col-md-6,.col-12')?.querySelector('label')?.textContent?.toLowerCase() || '';
+        if (lbl.includes('job') || lbl.includes('title')) body.job_title  = inp.value.trim();
+        if (lbl.includes('department'))                   body.department = inp.value.trim();
+      });
+      document.querySelectorAll('.ue-main select').forEach(sel => {
+        const lbl = sel.closest('.col-md-6,.col-12')?.querySelector('label')?.textContent?.toLowerCase() || '';
+        if (lbl.includes('role')) body.role = sel.value;
+      });
+      const saveBtn = document.querySelector('[form="editUserForm"]');
+      if (saveBtn) { saveBtn.disabled = true; saveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Saving…'; }
+      try {
+        await FP.apiFetch('/users/' + id, { method:'PATCH', body });
+        window.location.href = 'users-view.html?id=' + id;
+      } catch(e) {
+        FP.showError('Save failed: ' + e.message);
+        if (saveBtn) { saveBtn.disabled = false; saveBtn.innerHTML = '<i class="ph ph-check"></i> Save Changes'; }
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

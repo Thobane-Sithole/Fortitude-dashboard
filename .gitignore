@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Claude Code session files
+.claude/
+
+# Temp / scratch
+*.mjs.temp
+kanban_migrate_temp.mjs
+
+# Zip archives
+*.zip
+
+# goclone (unrelated project)
+goclone-master/
+
+# Next.js portal sub-app (has its own git repo)
+forty-portal/apps/portal/

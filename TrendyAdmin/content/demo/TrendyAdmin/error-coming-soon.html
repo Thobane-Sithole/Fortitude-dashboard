@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coming Soon - Forty Portal</title>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="Forty Portal - Agency Admin" name="description"/>
+<meta content="admin, dashboard, bootstrap" name="keywords"/>
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Google Fonts - Plus Jakarta Sans (body) + Outfit (headings) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Vendor CSS Files -->
+<link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../../vendors/remixicon/remixicon.css" rel="stylesheet"/>
+<link href="../../vendors/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+<link href="../../vendors/phosphor-icons/phosphor-icons.css" rel="stylesheet"/>
+<link href="../../vendors/lucide-icons/lucide.css" rel="stylesheet"/>
+<link href="../../vendors/simple-datatables/style.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.snow.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.bubble.css" rel="stylesheet"/>
+<link href="../../vendors/choices.js/choices.min.css" rel="stylesheet"/>
+<link href="../../vendors/flatpickr/flatpickr.min.css" rel="stylesheet"/>
+<!-- Template Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet"/>
+<!-- =======================================================
+    * Template Name: Forty Portal - Agency Admin
+    * Template URL: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/
+    * Updated: Jul 29, 2026 with Bootstrap v5.3.8
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+<body>
+<div class="auth-layout auth-centered">
+<!-- Content Side -->
+<div class="auth-content">
+<a class="auth-logo" href="index.html">
+<span class="auth-logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span>Forty Portal</span>
+</a>
+<div class="auth-content-inner">
+<div class="error-page error-coming-soon">
+<div class="error-tile">
+<i class="ph ph-rocket-launch"></i>
+</div>
+<h1 class="error-title">Something awesome is coming!</h1>
+<p class="error-text">
+            We're working hard to bring you something amazing. Sign up to be the
+            first to know when we launch.
+          </p>
+<!-- Countdown Timer -->
+<div class="error-countdown">
+<div class="countdown-tile">
+<span class="countdown-value" data-countdown="days">00</span>
+<span class="countdown-label">Days</span>
+</div>
+<div class="countdown-tile">
+<span class="countdown-value" data-countdown="hours">00</span>
+<span class="countdown-label">Hours</span>
+</div>
+<div class="countdown-tile">
+<span class="countdown-value" data-countdown="minutes">00</span>
+<span class="countdown-label">Minutes</span>
+</div>
+<div class="countdown-tile">
+<span class="countdown-value" data-countdown="seconds">00</span>
+<span class="countdown-label">Seconds</span>
+</div>
+</div>
+<!-- Notify Form -->
+<form class="error-notify">
+<input aria-label="Email address" placeholder="Enter your email" required="" type="email"/>
+<button class="error-btn" type="submit">Notify Me</button>
+</form>
+</div>
+</div>
+<!-- Footer -->
+<footer class="auth-footer">
+<div class="footer-copyright">
+          © 2026 <a href="#">Forty Portal</a>. All Rights Reserved.
+        </div>
+<div class="footer-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Help</a>
+</div>
+<div class="credits">
+<!-- All the links in the footer should remain intact. -->
+<!-- You can delete the links only if you purchased the pro version. -->
+<!-- Licensing information: https://bootstrapmade.com/license/ -->
+<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+</div>
+</footer>
+</div>
+</div>
+<!-- Vendor JS Files -->
+<script src="../../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../vendors/apexcharts/apexcharts.min.js"></script>
+<script src="../../vendors/chart.js/chart.umd.js"></script>
+<script src="../../vendors/echarts/echarts.min.js"></script>
+<script src="../../vendors/simple-datatables/simple-datatables.js"></script>
+<script src="../../vendors/quill/quill.js"></script>
+<script src="../../vendors/tinymce/tinymce.min.js"></script>
+<script src="../../vendors/choices.js/choices.min.js"></script>
+<script src="../../vendors/flatpickr/flatpickr.min.js"></script>
+<script src="../../vendors/php-email-form/validate.js"></script>
+<!-- Template Main JS Files -->
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/main.js"></script>
+<!-- App Sidebar Toggle (for app pages with sidebars) -->
+<script src="assets/js/apps-sidebar-toggle.js"></script>
+<script>
+    // Live countdown - launch date set to 30 days from now
+    (function() {
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 30);
+
+      function updateCountdown() {
+        const diff = targetDate - new Date();
+        if (diff <= 0) return;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        document.querySelector('[data-countdown="days"]').textContent = String(days).padStart(2, '0');
+        document.querySelector('[data-countdown="hours"]').textContent = String(hours).padStart(2, '0');
+        document.querySelector('[data-countdown="minutes"]').textContent = String(minutes).padStart(2, '0');
+        document.querySelector('[data-countdown="seconds"]').textContent = String(seconds).padStart(2, '0');
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
+</body>
+</html>

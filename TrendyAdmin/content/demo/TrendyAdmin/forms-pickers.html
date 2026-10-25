@@ -1,0 +1,1655 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Date/Time Pickers - Forty Portal</title>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="Forty Portal - Agency Admin" name="description"/>
+<meta content="admin, dashboard, bootstrap" name="keywords"/>
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Google Fonts - Plus Jakarta Sans (body) + Outfit (headings) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Vendor CSS Files -->
+<link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../../vendors/remixicon/remixicon.css" rel="stylesheet"/>
+<link href="../../vendors/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+<link href="../../vendors/phosphor-icons/phosphor-icons.css" rel="stylesheet"/>
+<link href="../../vendors/lucide-icons/lucide.css" rel="stylesheet"/>
+<link href="../../vendors/simple-datatables/style.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.snow.css" rel="stylesheet"/>
+<link href="../../vendors/quill/quill.bubble.css" rel="stylesheet"/>
+<link href="../../vendors/choices.js/choices.min.css" rel="stylesheet"/>
+<link href="../../vendors/flatpickr/flatpickr.min.css" rel="stylesheet"/>
+<!-- Template Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet"/>
+<!-- =======================================================
+    * Template Name: Forty Portal - Agency Admin
+    * Template URL: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/
+    * Updated: Jul 29, 2026 with Bootstrap v5.3.8
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="header-inner">
+<!-- Header Left -->
+<div class="header-left">
+<button class="sidebar-toggle" title="Toggle Sidebar">
+<i class="ph ph-list"></i>
+</button>
+<a class="header-logo" href="index.html">
+<span class="header-logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span class="header-logo-text">Forty Portal</span>
+</a>
+<!-- Apps Quick Access -->
+<div class="header-action dropdown apps-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Quick Access">
+<i class="ph ph-dots-nine"></i>
+</button>
+<div class="dropdown-menu">
+<div class="apps-menu-header">
+<h6>Quick Access</h6>
+<span>Jump straight into an app</span>
+</div>
+<div class="apps-grid">
+<a class="apps-grid-item" href="apps-chat.html">
+<span class="apps-grid-icon"><i class="ph ph-chat-circle-dots"></i></span>
+<span>Chat</span>
+</a>
+<a class="apps-grid-item" href="apps-email.html">
+<span class="apps-grid-icon"><i class="ph ph-envelope"></i></span>
+<span>Email</span>
+</a>
+<a class="apps-grid-item" href="apps-calendar.html">
+<span class="apps-grid-icon"><i class="ph ph-calendar-blank"></i></span>
+<span>Calendar</span>
+</a>
+<a class="apps-grid-item" href="apps-kanban.html">
+<span class="apps-grid-icon"><i class="ph ph-kanban"></i></span>
+<span>Kanban</span>
+</a>
+<a class="apps-grid-item" href="apps-file-manager.html">
+<span class="apps-grid-icon"><i class="ph ph-folder-open"></i></span>
+<span>Files</span>
+</a>
+<a class="apps-grid-item" href="apps-todo.html">
+<span class="apps-grid-icon"><i class="ph ph-check-square"></i></span>
+<span>Todo</span>
+</a>
+<a class="apps-grid-item" href="apps-contacts.html">
+<span class="apps-grid-icon"><i class="ph ph-address-book"></i></span>
+<span>Contacts</span>
+</a>
+<a class="apps-grid-item" href="apps-support.html">
+<span class="apps-grid-icon"><i class="ph ph-headset"></i></span>
+<span>Support</span>
+</a>
+<a class="apps-grid-item" href="invoice-list.html">
+<span class="apps-grid-icon"><i class="ph ph-receipt"></i></span>
+<span>Invoices</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Header Search (Desktop) -->
+<div class="header-search">
+<form action="search-results.html" class="search-form" method="GET">
+<button type="submit"><i class="ph ph-magnifying-glass"></i></button>
+<input autocomplete="off" name="q" placeholder="Search anything..." type="search"/>
+<span class="search-hint">âK</span>
+</form>
+</div>
+<!-- Header Right -->
+<div class="header-right">
+<!-- Desktop Actions (hidden on mobile, shown in mobile menu) -->
+<div class="header-actions-desktop">
+<!-- Quick Create -->
+<div class="dropdown create-dropdown">
+<button aria-expanded="false" class="create-btn dropdown-toggle" data-bs-toggle="dropdown">
+<i class="ph ph-plus"></i>
+<span>Create</span>
+</button>
+<div class="dropdown-menu dropdown-menu-end create-menu">
+<a class="dropdown-item" href="apps-kanban.html">
+<span class="create-item-icon"><i class="ph ph-kanban"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Project</span>
+<span class="create-item-sub">Start a kanban board</span>
+</span>
+</a>
+<a class="dropdown-item" href="apps-todo.html">
+<span class="create-item-icon"><i class="ph ph-check-square"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Task</span>
+<span class="create-item-sub">Add to your todo list</span>
+</span>
+</a>
+<a class="dropdown-item" href="apps-contacts.html">
+<span class="create-item-icon"><i class="ph ph-user-plus"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Contact</span>
+<span class="create-item-sub">Save a new person</span>
+</span>
+</a>
+<a class="dropdown-item" href="invoice-list.html">
+<span class="create-item-icon"><i class="ph ph-receipt"></i></span>
+<span class="create-item-text">
+<span class="create-item-title">New Invoice</span>
+<span class="create-item-sub">Bill a customer</span>
+</span>
+</a>
+</div>
+</div>
+<div class="header-divider"></div>
+<!-- Theme Toggle -->
+<button class="header-action theme-toggle" title="Toggle Theme">
+<i class="ph ph-moon icon-dark"></i>
+<i class="ph ph-sun icon-light"></i>
+</button>
+<!-- Fullscreen Toggle -->
+<button class="header-action fullscreen-toggle" onclick="toggleFullscreen()" title="Fullscreen">
+<i class="ph ph-arrows-out icon-enter"></i>
+<i class="ph ph-arrows-in icon-exit"></i>
+</button>
+<!-- Messages -->
+<div class="header-action dropdown messages-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Messages">
+<i class="ph ph-chat-teardrop-text"></i>
+<span class="badge">2</span>
+</button>
+<div class="dropdown-menu dropdown-menu-end">
+<div class="messages-header">
+<h6>Messages</h6>
+<a href="apps-chat.html">View all</a>
+</div>
+<div class="messages-list">
+<a class="message-item unread" href="apps-chat.html">
+<span class="message-avatar">
+<img alt="Ayesha Nkosi" src="assets/img/avatars/avatar-2.webp"/>
+<span class="message-status"></span>
+</span>
+<span class="message-content">
+<span class="message-name">Ayesha Nkosi</span>
+<span class="message-text">The new dashboard mockups look amazing! ð¥</span>
+</span>
+<span class="message-time">2m</span>
+</a>
+<a class="message-item unread" href="apps-chat.html">
+<span class="message-avatar">
+<img alt="Sipho Dlamini" src="assets/img/avatars/avatar-3.webp"/>
+</span>
+<span class="message-content">
+<span class="message-name">Sipho Dlamini</span>
+<span class="message-text">Can you review my PR when you get a chance?</span>
+</span>
+<span class="message-time">1h</span>
+</a>
+<a class="message-item" href="apps-chat.html">
+<span class="message-avatar">
+<img alt="Zanele Mokoena" src="assets/img/avatars/avatar-4.webp"/>
+</span>
+<span class="message-content">
+<span class="message-name">Zanele Mokoena</span>
+<span class="message-text">Meeting moved to 3pm tomorrow</span>
+</span>
+<span class="message-time">3h</span>
+</a>
+</div>
+<div class="messages-footer">
+<a href="apps-chat.html">Open chat <i class="ph ph-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- Notifications -->
+<div class="header-action dropdown notification-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Notifications">
+<i class="ph ph-bell"></i>
+<span class="badge">3</span>
+</button>
+<div class="dropdown-menu dropdown-menu-end">
+<div class="notification-header">
+<h6>You have 3 new notifications</h6>
+<a class="notification-mark-read" data-notification-action="mark-all-read" href="#" title="Mark all as read">
+<i class="ph ph-checks"></i>
+</a>
+</div>
+<div class="notification-list">
+<div class="notification-item unread">
+<span class="notification-icon success">
+<i class="ph ph-check-circle"></i>
+</span>
+<span class="notification-content">
+<span class="notification-title">Order Completed</span>
+<span class="notification-text">Your order #12345 has been delivered</span>
+</span>
+<span class="notification-meta">
+<span class="notification-time">5m</span>
+<span class="notification-dot"></span>
+</span>
+</div>
+<div class="notification-item unread">
+<span class="notification-icon warning">
+<i class="ph ph-warning"></i>
+</span>
+<span class="notification-content">
+<span class="notification-title">Low Storage</span>
+<span class="notification-text">Server storage is running low (85% used)</span>
+</span>
+<span class="notification-meta">
+<span class="notification-time">1h</span>
+<span class="notification-dot"></span>
+</span>
+</div>
+<div class="notification-item">
+<span class="notification-icon info">
+<i class="ph ph-info"></i>
+</span>
+<span class="notification-content">
+<span class="notification-title">New Feature</span>
+<span class="notification-text">Dark mode is now available</span>
+</span>
+<span class="notification-meta">
+<span class="notification-time">2h</span>
+<span class="notification-dot"></span>
+</span>
+</div>
+</div>
+<div class="notification-footer">
+<a href="notifications.html">View all</a>
+<a href="settings.html">Settings</a>
+</div>
+</div>
+</div>
+<div class="header-divider"></div>
+<!-- User Dropdown -->
+<div class="header-action dropdown user-dropdown">
+<button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown">
+<img alt="User" class="avatar" src="assets/img/profile-img.webp"/>
+<span class="user-name">Thobane Sithole</span>
+<i class="ph ph-caret-down user-caret"></i>
+</button>
+<div class="dropdown-menu dropdown-menu-end">
+<div class="user-menu-card">
+<span class="user-menu-avatar">
+<img alt="User" src="assets/img/profile-img.webp"/>
+</span>
+<span class="user-menu-name">Thobane Sithole</span>
+<span class="user-menu-mail"><a class="__cf_email__" data-cfemail="fd97929593bd898f989399849c99909493d39e9290" href="/cdn-cgi/l/email-protection">[email protected]</a></span>
+<span class="user-menu-role">Administrator</span>
+</div>
+<div class="user-menu-body">
+<a class="dropdown-item" href="profile.html">
+<span class="user-menu-item-icon"><i class="ph ph-user"></i></span>
+                  My Profile
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+<a class="dropdown-item" href="settings.html">
+<span class="user-menu-item-icon"><i class="ph ph-gear"></i></span>
+                  Settings
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+<a class="dropdown-item" href="activity.html">
+<span class="user-menu-item-icon"><i class="ph ph-pulse"></i></span>
+                  Activity Log
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+<a class="dropdown-item" href="invoice-list.html">
+<span class="user-menu-item-icon"><i class="ph ph-receipt"></i></span>
+                  Billing
+                  <i class="ph ph-caret-right user-menu-item-caret"></i>
+</a>
+</div>
+<div class="user-menu-footer">
+<a class="user-menu-signout" href="auth-login.html">
+<i class="ph ph-sign-out"></i> Sign Out
+                </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Actions (visible only on mobile) -->
+<div class="header-actions-mobile">
+<!-- Search Toggle (Mobile) -->
+<button class="header-action search-toggle" title="Search">
+<i class="ph ph-magnifying-glass"></i>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="header-action mobile-menu-toggle" title="More">
+<i class="ph ph-dots-three-vertical"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Mobile Search -->
+<div class="mobile-search">
+<form action="search-results.html" class="search-form" method="GET">
+<input autocomplete="off" name="q" placeholder="Search anything..." type="search"/>
+<button type="submit"><i class="ph ph-magnifying-glass"></i></button>
+</form>
+</div>
+<!-- Mobile Header Menu -->
+<div class="mobile-header-menu">
+<div class="mobile-header-menu-content">
+<!-- Theme Toggle -->
+<button class="mobile-menu-item theme-toggle" title="Toggle Theme">
+<i class="ph ph-moon icon-dark"></i>
+<i class="ph ph-sun icon-light"></i>
+<span class="mobile-menu-label">Theme</span>
+</button>
+<!-- Fullscreen Toggle -->
+<button class="mobile-menu-item fullscreen-toggle" onclick="toggleFullscreen()" title="Fullscreen">
+<i class="ph ph-arrows-out icon-enter"></i>
+<i class="ph ph-arrows-in icon-exit"></i>
+<span class="mobile-menu-label">Fullscreen</span>
+</button>
+<!-- Messages -->
+<a class="mobile-menu-item" href="apps-chat.html">
+<i class="ph ph-chat-teardrop-text"></i>
+<span class="badge">2</span>
+<span class="mobile-menu-label">Messages</span>
+</a>
+<!-- Notifications -->
+<a class="mobile-menu-item" href="notifications.html">
+<i class="ph ph-bell"></i>
+<span class="badge">3</span>
+<span class="mobile-menu-label">Notifications</span>
+</a>
+<!-- Profile -->
+<a class="mobile-menu-item" href="profile.html">
+<i class="ph ph-user"></i>
+<span class="mobile-menu-label">Profile</span>
+</a>
+<!-- Sign Out -->
+<a class="mobile-menu-item mobile-menu-item-danger" href="auth-login.html">
+<i class="ph ph-sign-out"></i>
+<span class="mobile-menu-label">Sign Out</span>
+</a>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="sidebar">
+<!-- Sidebar Header -->
+<div class="sidebar-header">
+<a class="sidebar-logo" href="index.html">
+<span class="sidebar-logo-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span class="sidebar-logo-text">Forty Portal</span>
+</a>
+<button class="sidebar-close">
+<i class="ph ph-x"></i>
+</button>
+</div>
+<!-- Sidebar Navigation -->
+<nav class="sidebar-nav">
+<ul class="nav-menu">
+<li class="nav-heading"><span>Overview</span></li>
+<li class="nav-item">
+<a class="nav-link" href="index.html">
+<span class="nav-icon"><i class="ph ph-house"></i></span>
+<span class="nav-text">Home</span>
+</a>
+</li>
+<!-- Dashboards Submenu -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-gauge"></i></span>
+<span class="nav-text">Dashboards</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="dashboard-sales.html">Sales</a></li>
+<li><a class="nav-link" href="dashboard-analytics.html">Analytics</a></li>
+<li><a class="nav-link" href="dashboard-crm.html">CRM</a></li>
+<li><a class="nav-link" href="dashboard-marketing.html">Marketing</a></li>
+<li><a class="nav-link" href="dashboard-projects.html">Projects</a></li>
+<li><a class="nav-link" href="dashboard-finance.html">Finance</a></li>
+</ul>
+</li>
+<!-- Users -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-users"></i></span>
+<span class="nav-text">Users</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="users.html">Users List</a></li>
+<li><a class="nav-link" href="users-view.html">User View</a></li>
+<li><a class="nav-link" href="users-edit.html">User Edit</a></li>
+<li><a class="nav-link" href="profile.html">Profile</a></li>
+<!-- 3rd Level - Settings submenu -->
+<li class="has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+                Settings
+                <i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="settings.html">Account</a></li>
+<li><a class="nav-link" href="notifications.html">Notifications</a></li>
+<li><a class="nav-link" href="activity.html">Activity</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="roles.html">Roles &amp; Permissions</a></li>
+</ul>
+</li>
+<!-- Authentication -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-shield-check"></i></span>
+<span class="nav-text">Authentication</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="auth-login.html">Login</a></li>
+<li><a class="nav-link" href="auth-register.html">Register</a></li>
+<li><a class="nav-link" href="auth-forgot-password.html">Forgot Password</a></li>
+<li><a class="nav-link" href="auth-reset-password.html">Reset Password</a></li>
+<li><a class="nav-link" href="auth-verify-email.html">Email Verification</a></li>
+<li><a class="nav-link" href="auth-two-factor.html">Two Factor Auth</a></li>
+<li><a class="nav-link" href="auth-lock-screen.html">Lock Screen</a></li>
+</ul>
+</li>
+<!-- Apps Section -->
+<li class="nav-heading"><span>Apps</span></li>
+<li class="nav-item">
+<a class="nav-link" href="apps-calendar.html">
+<span class="nav-icon"><i class="ph ph-calendar-blank"></i></span>
+<span class="nav-text">Calendar</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-kanban.html">
+<span class="nav-icon"><i class="ph ph-kanban"></i></span>
+<span class="nav-text">Kanban Board</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-chat.html">
+<span class="nav-icon"><i class="ph ph-chat-circle-dots"></i></span>
+<span class="nav-text">Chat</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-contacts.html">
+<span class="nav-icon"><i class="ph ph-address-book"></i></span>
+<span class="nav-text">Contacts</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-file-manager.html">
+<span class="nav-icon"><i class="ph ph-folder-open"></i></span>
+<span class="nav-text">File Manager</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-email.html">
+<span class="nav-icon"><i class="ph ph-envelope"></i></span>
+<span class="nav-text">Email</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-todo.html">
+<span class="nav-icon"><i class="ph ph-check-square"></i></span>
+<span class="nav-text">Todo List</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="apps-support.html">
+<span class="nav-icon"><i class="ph ph-headset"></i></span>
+<span class="nav-text">Support Center</span>
+</a>
+</li>
+<!-- UI Elements Section -->
+<li class="nav-heading"><span>UI Elements</span></li>
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-puzzle-piece"></i></span>
+<span class="nav-text">Components</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="components-alerts.html">Alerts</a></li>
+<li><a class="nav-link" href="components-accordion.html">Accordion</a></li>
+<li><a class="nav-link" href="components-badges.html">Badges</a></li>
+<li><a class="nav-link" href="components-breadcrumbs.html">Breadcrumbs</a></li>
+<li><a class="nav-link" href="components-buttons.html">Buttons</a></li>
+<li><a class="nav-link" href="components-cards.html">Cards</a></li>
+<li><a class="nav-link" href="components-carousel.html">Carousel</a></li>
+<li><a class="nav-link" href="components-dropdowns.html">Dropdowns</a></li>
+<li><a class="nav-link" href="components-list-group.html">List Group</a></li>
+<li><a class="nav-link" href="components-modal.html">Modal</a></li>
+<li><a class="nav-link" href="components-nav-tabs.html">Navs &amp; Tabs</a></li>
+<li><a class="nav-link" href="components-offcanvas.html">Offcanvas</a></li>
+<li><a class="nav-link" href="components-pagination.html">Pagination</a></li>
+<li><a class="nav-link" href="components-popovers.html">Popovers</a></li>
+<li><a class="nav-link" href="components-progress.html">Progress</a></li>
+<li><a class="nav-link" href="components-spinners.html">Spinners</a></li>
+<li><a class="nav-link" href="components-toasts.html">Toasts</a></li>
+<li><a class="nav-link" href="components-tooltips.html">Tooltips</a></li>
+</ul>
+</li>
+<!-- Widgets -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-stack"></i></span>
+<span class="nav-text">Widgets</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="widgets-cards.html">Cards</a></li>
+<li><a class="nav-link" href="widgets-banners.html">Banners</a></li>
+<li><a class="nav-link" href="widgets-charts.html">Charts</a></li>
+<li><a class="nav-link" href="widgets-apps.html">Apps</a></li>
+<li><a class="nav-link" href="widgets-data.html">Data</a></li>
+</ul>
+</li>
+<!-- Forms Section -->
+<li class="nav-item has-submenu open">
+<a aria-expanded="true" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-list-checks"></i></span>
+<span class="nav-text">Forms</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu show">
+<li><a class="nav-link" href="forms-elements.html">Form Elements</a></li>
+<li><a class="nav-link" href="forms-layouts.html">Form Layouts</a></li>
+<li><a class="nav-link" href="forms-validation.html">Validation</a></li>
+<li><a class="nav-link" href="forms-wizard.html">Wizard</a></li>
+<li><a class="nav-link" href="forms-editors.html">Rich Editors</a></li>
+<li><a class="nav-link active" href="forms-pickers.html">Date/Time Pickers</a></li>
+<li><a class="nav-link" href="forms-select.html">Advanced Select</a></li>
+<li><a class="nav-link" href="forms-upload.html">File Upload</a></li>
+</ul>
+</li>
+<!-- Tables Section -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-table"></i></span>
+<span class="nav-text">Tables</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="tables-basic.html">Basic Tables</a></li>
+<li><a class="nav-link" href="tables-datatables.html">DataTables</a></li>
+<li><a class="nav-link" href="tables-responsive.html">Responsive Tables</a></li>
+</ul>
+</li>
+<!-- Charts Section -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-chart-bar"></i></span>
+<span class="nav-text">Charts</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="charts-apexcharts.html">ApexCharts</a></li>
+<li><a class="nav-link" href="charts-chartjs.html">Chart.js</a></li>
+<li><a class="nav-link" href="charts-echarts.html">ECharts</a></li>
+</ul>
+</li>
+<!-- Icons Section -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-diamond"></i></span>
+<span class="nav-text">Icons</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="icons-bootstrap.html">Bootstrap Icons</a></li>
+<li><a class="nav-link" href="icons-remixicon.html">Remix Icons</a></li>
+<li><a class="nav-link" href="icons-fontawesome.html">Font Awesome</a></li>
+<li><a class="nav-link" href="icons-phosphor.html">Phosphor Icons</a></li>
+<li><a class="nav-link" href="icons-lucide.html">Lucide Icons</a></li>
+</ul>
+</li>
+<!-- Pages Section -->
+<li class="nav-heading"><span>Pages</span></li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">
+<span class="nav-icon"><i class="ph ph-envelope-simple"></i></span>
+<span class="nav-text">Contact</span>
+</a>
+</li>
+<!-- Invoices -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-receipt"></i></span>
+<span class="nav-text">Invoices</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="invoice-list.html">Invoice List</a></li>
+<li><a class="nav-link" href="invoice.html">Invoice View</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="pricing.html">
+<span class="nav-icon"><i class="ph ph-tag"></i></span>
+<span class="nav-text">Pricing</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="faq.html">
+<span class="nav-icon"><i class="ph ph-question"></i></span>
+<span class="nav-text">FAQ</span>
+</a>
+</li>
+<!-- Error Pages -->
+<li class="nav-item has-submenu">
+<a aria-expanded="false" class="nav-link" href="#">
+<span class="nav-icon"><i class="ph ph-warning"></i></span>
+<span class="nav-text">Error Pages</span>
+<i class="ph ph-caret-right nav-arrow"></i>
+</a>
+<ul class="nav-submenu">
+<li><a class="nav-link" href="error-404.html">404 Not Found</a></li>
+<li><a class="nav-link" href="error-403.html">403 Forbidden</a></li>
+<li><a class="nav-link" href="error-500.html">500 Server Error</a></li>
+<li><a class="nav-link" href="error-maintenance.html">Maintenance</a></li>
+<li><a class="nav-link" href="error-coming-soon.html">Coming Soon</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="timeline.html">
+<span class="nav-icon"><i class="ph ph-clock-counter-clockwise"></i></span>
+<span class="nav-text">Timeline</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="search-results.html">
+<span class="nav-icon"><i class="ph ph-magnifying-glass"></i></span>
+<span class="nav-text">Search Results</span>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="blank.html">
+<span class="nav-icon"><i class="ph ph-file"></i></span>
+<span class="nav-text">Blank Page</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Sidebar Footer - User Card -->
+<div class="sidebar-footer">
+<div class="sidebar-user">
+<a class="sidebar-user-link" href="profile.html">
+<span class="sidebar-user-avatar">
+<img alt="User" src="assets/img/profile-img.webp"/>
+<span class="sidebar-user-status"></span>
+</span>
+<span class="sidebar-user-info">
+<span class="sidebar-user-name">Thobane Sithole</span>
+<span class="sidebar-user-role">Administrator</span>
+</span>
+</a>
+<div class="sidebar-user-actions">
+<a class="sidebar-user-action" href="settings.html" title="Settings">
+<i class="ph ph-gear"></i>
+</a>
+<a class="sidebar-user-action sidebar-user-logout" href="auth-login.html" title="Logout">
+<i class="ph ph-sign-out"></i>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Sidebar Overlay (Mobile) -->
+<div class="sidebar-overlay"></div>
+<!-- Main Content -->
+<main class="main">
+<div class="main-content page-forms-pickers">
+<!-- Page Header -->
+<div class="page-header">
+<h1 class="page-title">Date/Time Pickers</h1>
+<nav class="breadcrumb">
+<a class="breadcrumb-item" href="index.html">Home</a>
+<a class="breadcrumb-item" href="#">Forms</a>
+<span class="breadcrumb-item active">Date/Time Pickers</span>
+</nav>
+</div>
+<!-- Basic Date Pickers -->
+<section class="section">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Basic Date Picker</h5>
+<p class="card-subtitle">Simple date selection</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="basicDate">Default Date Picker</label>
+<div class="input-group">
+<input class="form-control" data-picker="date" id="basicDate" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="preselectedDate">Preselected Date</label>
+<div class="input-group">
+<input class="form-control" data-default-date="today" data-picker="date" id="preselectedDate" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="customFormat">Custom Format (DD/MM/YYYY)</label>
+<div class="input-group">
+<input class="form-control" data-date-format="d/m/Y" data-picker="date" id="customFormat" placeholder="DD/MM/YYYY" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="longFormat">Long Format</label>
+<div class="input-group">
+<input class="form-control" data-date-format="F j, Y" data-picker="date" id="longFormat" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Format: January 15, 2025</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Time Picker</h5>
+<p class="card-subtitle">Time-only selection</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="basicTime">24-Hour Time</label>
+<div class="input-group">
+<input class="form-control" data-picker="time" id="basicTime" placeholder="Select time" type="text"/>
+<span class="input-group-text"><i class="ph ph-clock"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="time12Hour">12-Hour Time (AM/PM)</label>
+<div class="input-group">
+<input class="form-control" data-picker="time-12" id="time12Hour" placeholder="Select time" type="text"/>
+<span class="input-group-text"><i class="ph ph-clock"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="timeSeconds">Time with Seconds</label>
+<div class="input-group">
+<input class="form-control" data-picker="time-seconds" id="timeSeconds" placeholder="Select time" type="text"/>
+<span class="input-group-text"><i class="ph ph-clock"></i></span>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="preselectedTime">Default Time</label>
+<div class="input-group">
+<input class="form-control" data-default-date="09:30" data-picker="time" id="preselectedTime" placeholder="Select time" type="text"/>
+<span class="input-group-text"><i class="ph ph-clock"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DateTime Picker -->
+<section class="section">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Date &amp; Time Picker</h5>
+<p class="card-subtitle">Combined date and time selection</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="dateTime">Date &amp; Time (24h)</label>
+<div class="input-group">
+<input class="form-control" data-picker="datetime" id="dateTime" placeholder="Select date &amp; time" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="dateTime12">Date &amp; Time (12h AM/PM)</label>
+<div class="input-group">
+<input class="form-control" data-picker="datetime-12" id="dateTime12" placeholder="Select date &amp; time" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="dateTimeMinute">With Minute Increment (15 min)</label>
+<div class="input-group">
+<input class="form-control" data-picker="datetime-15" id="dateTimeMinute" placeholder="Select date &amp; time" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Date Range Picker</h5>
+<p class="card-subtitle">Select start and end dates</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="dateRange">Date Range</label>
+<div class="input-group">
+<input class="form-control" data-picker="range" id="dateRange" placeholder="Select date range" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label">Separate Inputs</label>
+<div class="row g-2">
+<div class="col-6">
+<div class="input-group">
+<input class="form-control" data-picker="range-start" id="rangeStart" placeholder="Start date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="col-6">
+<div class="input-group">
+<input class="form-control" data-picker="range-end" id="rangeEnd" placeholder="End date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="dateRangePreset">With Preset Range</label>
+<div class="input-group">
+<input class="form-control" data-picker="range-preset" id="dateRangePreset" placeholder="Select date range" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+<div class="form-text">Preset: Last 7 days</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Multiple & Inline Pickers -->
+<section class="section">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Multiple Dates</h5>
+<p class="card-subtitle">Select multiple dates at once</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="multipleDates">Multiple Selection</label>
+<div class="input-group">
+<input class="form-control" data-picker="multiple" id="multipleDates" placeholder="Select multiple dates" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-plus"></i></span>
+</div>
+<div class="form-text">Click multiple dates to select them</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="multipleDatesLimit">Limited Selection (Max 5)</label>
+<div class="input-group">
+<input class="form-control" data-picker="multiple-limit" id="multipleDatesLimit" placeholder="Select up to 5 dates" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-plus"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Week Picker</h5>
+<p class="card-subtitle">Select entire weeks</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="weekPicker">Week Number</label>
+<div class="input-group">
+<input class="form-control" data-picker="week" id="weekPicker" placeholder="Select week" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="weekRange">Week Range Selection</label>
+<div class="input-group">
+<input class="form-control" data-picker="week-range" id="weekRange" placeholder="Select week range" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Min/Max & Disabled Dates -->
+<section class="section">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Min &amp; Max Dates</h5>
+<p class="card-subtitle">Restrict date selection range</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="minDate">Minimum Date (Today)</label>
+<div class="input-group">
+<input class="form-control" data-picker="min-today" id="minDate" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Cannot select dates before today</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="maxDate">Maximum Date (Today)</label>
+<div class="input-group">
+<input class="form-control" data-picker="max-today" id="maxDate" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Cannot select dates after today</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="minMaxRange">Date Range Window (30 days)</label>
+<div class="input-group">
+<input class="form-control" data-picker="range-window" id="minMaxRange" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Select within 30 days from today</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Disabled Dates</h5>
+<p class="card-subtitle">Specific dates or days disabled</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="disabledWeekends">Weekends Disabled</label>
+<div class="input-group">
+<input class="form-control" data-picker="no-weekends" id="disabledWeekends" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Saturdays and Sundays are disabled</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="disabledDates">Specific Dates Disabled</label>
+<div class="input-group">
+<input class="form-control" data-picker="disabled-dates" id="disabledDates" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Some specific dates are blocked</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="enabledDates">Only Specific Dates Enabled</label>
+<div class="input-group">
+<input class="form-control" data-picker="enabled-dates" id="enabledDates" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Only certain dates are selectable</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Inline Calendar -->
+<section class="section">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Inline Calendar</h5>
+<p class="card-subtitle">Always visible calendar</p>
+</div>
+<div class="card-body">
+<div class="picker-inline-wrapper">
+<div id="inlineCalendar"></div>
+</div>
+<div class="mt-3">
+<label class="form-label">Selected Date:</label>
+<input class="form-control" id="inlineCalendarOutput" readonly="" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Inline Range Calendar</h5>
+<p class="card-subtitle">Inline date range picker</p>
+</div>
+<div class="card-body">
+<div class="picker-inline-wrapper">
+<div id="inlineRangeCalendar"></div>
+</div>
+<div class="mt-3">
+<label class="form-label">Selected Range:</label>
+<input class="form-control" id="inlineRangeOutput" readonly="" type="text"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Month/Year & Input States -->
+<section class="section">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Month &amp; Year Pickers</h5>
+<p class="card-subtitle">Select only month or year</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="monthPicker">Month Picker</label>
+<div class="input-group">
+<input class="form-control" data-picker="month" id="monthPicker" placeholder="Select month" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="yearPicker">Year Picker</label>
+<div class="input-group">
+<input class="form-control" data-picker="year" id="yearPicker" placeholder="Select year" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="monthYearPicker">Month &amp; Year</label>
+<div class="input-group">
+<input class="form-control" data-picker="month-year" id="monthYearPicker" placeholder="Select month &amp; year" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Input Sizes &amp; States</h5>
+<p class="card-subtitle">Different input sizes and states</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="pickerSm">Small Size</label>
+<div class="input-group input-group-sm">
+<input class="form-control" data-picker="date" id="pickerSm" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="pickerLg">Large Size</label>
+<div class="input-group input-group-lg">
+<input class="form-control" data-picker="date" id="pickerLg" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="pickerDisabled">Disabled</label>
+<div class="input-group">
+<input class="form-control" disabled="" id="pickerDisabled" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="pickerReadonly">Readonly (Click to open)</label>
+<div class="input-group">
+<input class="form-control" data-picker="date" id="pickerReadonly" placeholder="Select date" readonly="" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Validation & With Clear Button -->
+<section class="section">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">Validation States</h5>
+<p class="card-subtitle">Valid and invalid feedback</p>
+</div>
+<div class="card-body">
+<form class="needs-validation" novalidate="">
+<div class="mb-3">
+<label class="form-label" for="validPicker">Valid Date</label>
+<div class="input-group">
+<input class="form-control is-valid" data-picker="date" id="validPicker" type="text" value="2025-01-15"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="valid-feedback">Date is valid!</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="invalidPicker">Invalid Date</label>
+<div class="input-group has-validation">
+<input class="form-control is-invalid" data-picker="date" id="invalidPicker" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+<div class="invalid-feedback">Please select a valid date.</div>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="requiredPicker">Required Date <span class="text-danger">*</span></label>
+<div class="input-group has-validation">
+<input class="form-control" data-picker="date" id="requiredPicker" placeholder="Select date" required="" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+<div class="invalid-feedback">Please select a date.</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card h-100">
+<div class="card-header">
+<h5 class="card-title">With Clear Button</h5>
+<p class="card-subtitle">Easily clear selected values</p>
+</div>
+<div class="card-body">
+<div class="mb-3">
+<label class="form-label" for="clearableDate">Clearable Date</label>
+<div class="input-group picker-clearable">
+<input class="form-control" data-default-date="today" data-picker="date" id="clearableDate" placeholder="Select date" type="text"/>
+<button class="btn btn-outline-secondary picker-clear-btn" type="button"><i class="ph ph-x"></i></button>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="mb-3">
+<label class="form-label" for="clearableRange">Clearable Date Range</label>
+<div class="input-group picker-clearable">
+<input class="form-control" data-picker="range" id="clearableRange" placeholder="Select range" type="text"/>
+<button class="btn btn-outline-secondary picker-clear-btn" type="button"><i class="ph ph-x"></i></button>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="clearableTime">Clearable Time</label>
+<div class="input-group picker-clearable">
+<input class="form-control" data-default-date="14:30" data-picker="time" id="clearableTime" placeholder="Select time" type="text"/>
+<button class="btn btn-outline-secondary picker-clear-btn" type="button"><i class="ph ph-x"></i></button>
+<span class="input-group-text"><i class="ph ph-clock"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Real-World Examples -->
+<section class="section">
+<div class="card">
+<div class="card-header">
+<h5 class="card-title">Real-World Examples</h5>
+<p class="card-subtitle">Practical date/time picker implementations</p>
+</div>
+<div class="card-body">
+<form>
+<div class="row g-4">
+<!-- Event Scheduling -->
+<div class="col-md-6">
+<h6 class="mb-3"><i class="ph ph-calendar-dots me-2"></i>Event Scheduling</h6>
+<div class="mb-3">
+<label class="form-label" for="eventDate">Event Date</label>
+<div class="input-group">
+<input class="form-control" data-picker="min-today" id="eventDate" placeholder="Select event date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+</div>
+<div class="row g-2">
+<div class="col-6">
+<label class="form-label" for="eventStart">Start Time</label>
+<div class="input-group">
+<input class="form-control" data-picker="time" id="eventStart" placeholder="Start" type="text"/>
+<span class="input-group-text"><i class="ph ph-clock"></i></span>
+</div>
+</div>
+<div class="col-6">
+<label class="form-label" for="eventEnd">End Time</label>
+<div class="input-group">
+<input class="form-control" data-picker="time" id="eventEnd" placeholder="End" type="text"/>
+<span class="input-group-text"><i class="ph ph-clock"></i></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Booking System -->
+<div class="col-md-6">
+<h6 class="mb-3"><i class="ph ph-buildings me-2"></i>Hotel Booking</h6>
+<div class="row g-2 mb-3">
+<div class="col-6">
+<label class="form-label" for="checkIn">Check-in</label>
+<div class="input-group">
+<input class="form-control" data-picker="min-today" id="checkIn" placeholder="Check-in" type="text"/>
+<span class="input-group-text"><i class="ph ph-sign-in"></i></span>
+</div>
+</div>
+<div class="col-6">
+<label class="form-label" for="checkOut">Check-out</label>
+<div class="input-group">
+<input class="form-control" data-picker="min-today" id="checkOut" placeholder="Check-out" type="text"/>
+<span class="input-group-text"><i class="ph ph-sign-out"></i></span>
+</div>
+</div>
+</div>
+<div class="alert alert-info py-2 mb-0">
+<small><i class="ph ph-info me-1"></i>Minimum stay: 1 night</small>
+</div>
+</div>
+<!-- Birthday & DOB -->
+<div class="col-md-6">
+<h6 class="mb-3"><i class="ph ph-cake me-2"></i>Date of Birth</h6>
+<div class="mb-3">
+<label class="form-label" for="dob">Birth Date</label>
+<div class="input-group">
+<input class="form-control" data-picker="dob" id="dob" placeholder="Select your birthday" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-heart"></i></span>
+</div>
+<div class="form-text">Must be 18 years or older</div>
+</div>
+</div>
+<!-- Deadline & Due Date -->
+<div class="col-md-6">
+<h6 class="mb-3"><i class="ph ph-alarm me-2"></i>Task Deadline</h6>
+<div class="mb-3">
+<label class="form-label" for="deadline">Due Date &amp; Time</label>
+<div class="input-group">
+<input class="form-control" data-picker="datetime" id="deadline" placeholder="Set deadline" type="text"/>
+<span class="input-group-text"><i class="ph ph-alarm"></i></span>
+</div>
+</div>
+</div>
+<!-- Report Period -->
+<div class="col-md-6">
+<h6 class="mb-3"><i class="ph ph-trend-up me-2"></i>Report Period</h6>
+<div class="mb-3">
+<label class="form-label" for="reportPeriod">Date Range</label>
+<div class="input-group">
+<input class="form-control" data-picker="range" id="reportPeriod" placeholder="Select period" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-dots"></i></span>
+</div>
+</div>
+<div class="btn-group btn-group-sm" role="group">
+<button class="btn btn-outline-primary preset-btn" data-preset="today" type="button">Today</button>
+<button class="btn btn-outline-primary preset-btn" data-preset="week" type="button">This Week</button>
+<button class="btn btn-outline-primary preset-btn" data-preset="month" type="button">This Month</button>
+<button class="btn btn-outline-primary preset-btn" data-preset="year" type="button">This Year</button>
+</div>
+</div>
+<!-- Appointment Slots -->
+<div class="col-md-6">
+<h6 class="mb-3"><i class="ph ph-identification-badge me-2"></i>Appointment Booking</h6>
+<div class="mb-3">
+<label class="form-label" for="appointmentDate">Appointment Date</label>
+<div class="input-group">
+<input class="form-control" data-picker="no-weekends" id="appointmentDate" placeholder="Select date" type="text"/>
+<span class="input-group-text"><i class="ph ph-calendar-blank"></i></span>
+</div>
+<div class="form-text">Available Monday to Friday only</div>
+</div>
+<div class="mb-0">
+<label class="form-label" for="appointmentTime">Time Slot</label>
+<select class="form-select" id="appointmentTime">
+<option value="">Select time slot</option>
+<option value="09:00">09:00 AM - 09:30 AM</option>
+<option value="09:30">09:30 AM - 10:00 AM</option>
+<option value="10:00">10:00 AM - 10:30 AM</option>
+<option value="10:30">10:30 AM - 11:00 AM</option>
+<option value="11:00">11:00 AM - 11:30 AM</option>
+<option value="14:00">02:00 PM - 02:30 PM</option>
+<option value="14:30">02:30 PM - 03:00 PM</option>
+<option value="15:00">03:00 PM - 03:30 PM</option>
+</select>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-brand">
+<span class="footer-brand-mark"><i class="bi bi-lightning-charge-fill"></i></span>
+<span class="footer-copyright">
+            © 2026 <a href="#">Forty Portal</a>. All Rights Reserved.
+          </span>
+</div>
+<div class="footer-links">
+<a href="#">About</a>
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Contact</a>
+</div>
+<div class="footer-credits">
+<div class="credits">
+<!-- All the links in the footer should remain intact. -->
+<!-- You can delete the links only if you purchased the pro version. -->
+<!-- Licensing information: https://bootstrapmade.com/license/ -->
+<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/trendy-admin-bootstrap-dashboard-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- Back to Top -->
+<a class="back-to-top" href="#">
+<i class="ph ph-arrow-up"></i>
+</a>
+<!-- Vendor JS Files -->
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../vendors/apexcharts/apexcharts.min.js"></script>
+<script src="../../vendors/chart.js/chart.umd.js"></script>
+<script src="../../vendors/echarts/echarts.min.js"></script>
+<script src="../../vendors/simple-datatables/simple-datatables.js"></script>
+<script src="../../vendors/quill/quill.js"></script>
+<script src="../../vendors/tinymce/tinymce.min.js"></script>
+<script src="../../vendors/choices.js/choices.min.js"></script>
+<script src="../../vendors/flatpickr/flatpickr.min.js"></script>
+<script src="../../vendors/php-email-form/validate.js"></script>
+<!-- Template Main JS Files -->
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/main.js"></script>
+<!-- App Sidebar Toggle (for app pages with sidebars) -->
+<script src="assets/js/apps-sidebar-toggle.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Basic date picker
+      flatpickr('[data-picker="date"]', {
+        dateFormat: 'Y-m-d',
+        allowInput: true
+      });
+      // Date with today as default
+      flatpickr('[data-default-date="today"]', {
+        dateFormat: 'Y-m-d',
+        defaultDate: 'today',
+        allowInput: true
+      });
+      // Custom format DD/MM/YYYY
+      flatpickr('#customFormat', {
+        dateFormat: 'd/m/Y',
+        allowInput: true
+      });
+      // Long format
+      flatpickr('#longFormat', {
+        dateFormat: 'F j, Y',
+        allowInput: true
+      });
+      // Time picker 24h
+      flatpickr('[data-picker="time"]', {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: 'H:i',
+        time_24hr: true,
+        allowInput: true
+      });
+      // Time picker 12h
+      flatpickr('[data-picker="time-12"]', {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: 'h:i K',
+        time_24hr: false,
+        allowInput: true
+      });
+      // Time with seconds
+      flatpickr('[data-picker="time-seconds"]', {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: 'H:i:S',
+        time_24hr: true,
+        enableSeconds: true,
+        allowInput: true
+      });
+      // Preselected time
+      flatpickr('#preselectedTime', {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: 'H:i',
+        time_24hr: true,
+        defaultDate: '09:30'
+      });
+      // DateTime picker
+      flatpickr('[data-picker="datetime"]', {
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
+        time_24hr: true,
+        allowInput: true
+      });
+      // DateTime 12h
+      flatpickr('[data-picker="datetime-12"]', {
+        enableTime: true,
+        dateFormat: 'Y-m-d h:i K',
+        time_24hr: false,
+        allowInput: true
+      });
+      // DateTime with 15min increment
+      flatpickr('[data-picker="datetime-15"]', {
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
+        time_24hr: true,
+        minuteIncrement: 15,
+        allowInput: true
+      });
+      // Date range
+      flatpickr('[data-picker="range"]', {
+        mode: 'range',
+        dateFormat: 'Y-m-d',
+        allowInput: true
+      });
+      // Range with preset
+      flatpickr('#dateRangePreset', {
+        mode: 'range',
+        dateFormat: 'Y-m-d',
+        defaultDate: [new Date(), new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)]
+      });
+      // Linked range pickers
+      const rangeStart = flatpickr('#rangeStart', {
+        dateFormat: 'Y-m-d',
+        onChange: function(selectedDates) {
+          rangeEnd.set('minDate', selectedDates[0]);
+        }
+      });
+      const rangeEnd = flatpickr('#rangeEnd', {
+        dateFormat: 'Y-m-d',
+        onChange: function(selectedDates) {
+          rangeStart.set('maxDate', selectedDates[0]);
+        }
+      });
+      // Multiple dates
+      flatpickr('[data-picker="multiple"]', {
+        mode: 'multiple',
+        dateFormat: 'Y-m-d',
+        conjunction: ', '
+      });
+      // Multiple dates with limit
+      flatpickr('[data-picker="multiple-limit"]', {
+        mode: 'multiple',
+        dateFormat: 'Y-m-d',
+        conjunction: ', ',
+        onReady: function() {
+          this.config.maxDates = 5;
+        },
+        onChange: function(selectedDates, dateStr, instance) {
+          if (selectedDates.length > 5) {
+            selectedDates.pop();
+            instance.setDate(selectedDates);
+          }
+        }
+      });
+      // Week picker
+      flatpickr('[data-picker="week"]', {
+        weekNumbers: true,
+        dateFormat: 'Y-W\\WW',
+        allowInput: true
+      });
+      // Week range
+      flatpickr('[data-picker="week-range"]', {
+        mode: 'range',
+        weekNumbers: true,
+        dateFormat: 'Y-m-d'
+      });
+      // Min date today
+      flatpickr('[data-picker="min-today"]', {
+        dateFormat: 'Y-m-d',
+        minDate: 'today',
+        allowInput: true
+      });
+      // Max date today
+      flatpickr('[data-picker="max-today"]', {
+        dateFormat: 'Y-m-d',
+        maxDate: 'today',
+        allowInput: true
+      });
+      // Range window (30 days)
+      flatpickr('[data-picker="range-window"]', {
+        dateFormat: 'Y-m-d',
+        minDate: 'today',
+        maxDate: new Date().fp_incr(30)
+      });
+      // No weekends
+      flatpickr('[data-picker="no-weekends"]', {
+        dateFormat: 'Y-m-d',
+        disable: [
+          function(date) {
+            return (date.getDay() === 0 || date.getDay() === 6);
+          }
+        ]
+      });
+      // Specific disabled dates
+      flatpickr('[data-picker="disabled-dates"]', {
+        dateFormat: 'Y-m-d',
+        disable: [
+          new Date().fp_incr(2),
+          new Date().fp_incr(5),
+          new Date().fp_incr(10)
+        ]
+      });
+      // Only specific dates enabled
+      flatpickr('[data-picker="enabled-dates"]', {
+        dateFormat: 'Y-m-d',
+        enable: [
+          new Date(),
+          new Date().fp_incr(1),
+          new Date().fp_incr(3),
+          new Date().fp_incr(7),
+          new Date().fp_incr(14)
+        ]
+      });
+      // Inline calendar
+      const inlineCalendar = flatpickr('#inlineCalendar', {
+        inline: true,
+        dateFormat: 'Y-m-d',
+        onChange: function(selectedDates, dateStr) {
+          document.getElementById('inlineCalendarOutput').value = dateStr;
+        }
+      });
+      // Inline range calendar
+      const inlineRangeCalendar = flatpickr('#inlineRangeCalendar', {
+        inline: true,
+        mode: 'range',
+        dateFormat: 'Y-m-d',
+        onChange: function(selectedDates, dateStr) {
+          document.getElementById('inlineRangeOutput').value = dateStr;
+        }
+      });
+      // Month picker
+      flatpickr('[data-picker="month"]', {
+        plugins: [],
+        dateFormat: 'F Y',
+        disableMobile: true,
+        onChange: function(selectedDates, dateStr, instance) {
+          // Keep only month view
+        }
+      });
+      // Year picker - using month picker with year view
+      flatpickr('[data-picker="year"]', {
+        dateFormat: 'Y',
+        disableMobile: true
+      });
+      // Month & Year picker
+      flatpickr('[data-picker="month-year"]', {
+        dateFormat: 'F Y',
+        disableMobile: true
+      });
+      // DOB picker (18+ years)
+      const maxDOB = new Date();
+      maxDOB.setFullYear(maxDOB.getFullYear() - 18);
+      flatpickr('[data-picker="dob"]', {
+        dateFormat: 'Y-m-d',
+        maxDate: maxDOB,
+        defaultDate: maxDOB
+      });
+      // Clear buttons
+      document.querySelectorAll('.picker-clear-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const input = this.closest('.input-group').querySelector('input');
+          if (input._flatpickr) {
+            input._flatpickr.clear();
+          }
+        });
+      });
+      // Report period presets
+      document.querySelectorAll('.preset-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const preset = this.dataset.preset;
+          const picker = document.getElementById('reportPeriod')._flatpickr;
+          const today = new Date();
+          let startDate, endDate;
+          switch (preset) {
+            case 'today':
+              startDate = endDate = today;
+              break;
+            case 'week':
+              const dayOfWeek = today.getDay();
+              startDate = new Date(today);
+              startDate.setDate(today.getDate() - dayOfWeek);
+              endDate = new Date(startDate);
+              endDate.setDate(startDate.getDate() + 6);
+              break;
+            case 'month':
+              startDate = new Date(today.getFullYear(), today.getMonth(), 1);
+              endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+              break;
+            case 'year':
+              startDate = new Date(today.getFullYear(), 0, 1);
+              endDate = new Date(today.getFullYear(), 11, 31);
+              break;
+          }
+          picker.setDate([startDate, endDate]);
+        });
+      });
+      // Form validation
+      const forms = document.querySelectorAll('.needs-validation');
+      forms.forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    });
+  </script>
+<script src="assets/js/portal.js"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){FP.requireAuth();FP.initLogout();});</script>
+</body>
+</html>
