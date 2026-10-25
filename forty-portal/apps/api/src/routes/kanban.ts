@@ -160,4 +160,52 @@ router.delete('/tasks/:id', async (req, res, next) => {
   } catch (err) { next(err); }
 });
 
+// ── Comments ──────────────────────────────────────────────────────────────────
+
+const CommentSchema = z.object({ body: z.string().min(1).max(5000) });
+
+// GET /api/kanban/tasks/:id/comments
+router.get('/tasks/:id/comments', async (req, res, next) => {
+  try {
+    const { rows } = await query(
+      `SELECT c.id, c.body, c.created_at::text,
+              u.id::text AS user_id, u.name AS user_name
+       FROM kanban_task_comments c
+       JOIN users u ON u.id = c.user_id
+       WHERE c.task_id = $1
+       ORDER BY c.created_at ASC`,
+      [req.params.id]
+    );
+    res.json(rows);
+  } catch (err) { next(err); }
+});
+
+// POST /api/kanban/tasks/:id/comments
+router.post('/tasks/:id/comments', async (req, res, next) => {
+  try {
+    const me = req.user!.sub;
+    const { body } = CommentSchema.parse(req.body);
+    const { rows } = await query(
+      `INSERT INTO kanban_task_comments(task_id, user_id, body)
+       VALUES($1, $2, $3)
+       RETURNING id, body, created_at::text`,
+      [req.params.id, me, body]
+    );
+    const { rows: user } = await query(`SELECT id::text, name FROM users WHERE id=$1`, [me]);
+    res.status(201).json({ ...rows[0], user_id: user[0].id, user_name: user[0].name });
+  } catch (err) { next(err); }
+});
+
+// DELETE /api/kanban/tasks/:taskId/comments/:commentId
+router.delete('/tasks/:taskId/comments/:commentId', async (req, res, next) => {
+  try {
+    const me = req.user!.sub;
+    await query(
+      `DELETE FROM kanban_task_comments WHERE id=$1 AND user_id=$2`,
+      [req.params.commentId, me]
+    );
+    res.json({ ok: true });
+  } catch (err) { next(err); }
+});
+
 export default router;

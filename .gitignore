@@ -41,6 +41,7 @@ Thumbs.db
 # Temp / scratch
 *.mjs.temp
 kanban_migrate_temp.mjs
+forty-portal/kanban_comments_migrate.mjs
 
 # Zip archives
 *.zip

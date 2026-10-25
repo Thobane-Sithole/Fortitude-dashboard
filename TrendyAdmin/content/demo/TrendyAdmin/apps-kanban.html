@@ -164,14 +164,14 @@
 <div class="header-action dropdown messages-dropdown">
 <button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Messages">
 <i class="ph ph-chat-teardrop-text"></i>
-<span class="badge">2</span>
+<span class="badge" id="fp-msg-badge" style="display:none">0</span>
 </button>
 <div class="dropdown-menu dropdown-menu-end">
 <div class="messages-header">
 <h6>Messages</h6>
 <a href="apps-chat.html">View all</a>
 </div>
-<div class="messages-list">
+<div class="messages-list" id="fp-messages-list">
 <a class="message-item unread" href="apps-chat.html">
 <span class="message-avatar">
 <img alt="Ayesha Nkosi" src="assets/img/avatars/avatar-2.webp"/>
@@ -213,16 +213,16 @@
 <div class="header-action dropdown notification-dropdown">
 <button aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" title="Notifications">
 <i class="ph ph-bell"></i>
-<span class="badge">3</span>
+<span class="badge" id="fp-notif-badge" style="display:none">0</span>
 </button>
 <div class="dropdown-menu dropdown-menu-end">
 <div class="notification-header">
-<h6>You have 3 new notifications</h6>
+<h6 id="fp-notif-header-text">Notifications</h6>
 <a class="notification-mark-read" data-notification-action="mark-all-read" href="#" title="Mark all as read">
 <i class="ph ph-checks"></i>
 </a>
 </div>
-<div class="notification-list">
+<div class="notification-list" id="fp-notif-list">
 <div class="notification-item unread">
 <span class="notification-icon success">
 <i class="ph ph-check-circle"></i>
@@ -355,13 +355,13 @@
 <!-- Messages -->
 <a class="mobile-menu-item" href="apps-chat.html">
 <i class="ph ph-chat-teardrop-text"></i>
-<span class="badge">2</span>
+<span class="badge" id="fp-mobile-msg-badge" style="display:none">0</span>
 <span class="mobile-menu-label">Messages</span>
 </a>
 <!-- Notifications -->
 <a class="mobile-menu-item" href="notifications.html">
 <i class="ph ph-bell"></i>
-<span class="badge">3</span>
+<span class="badge" id="fp-mobile-notif-badge" style="display:none">0</span>
 <span class="mobile-menu-label">Notifications</span>
 </a>
 <!-- Profile -->
@@ -1212,22 +1212,13 @@
 <div class="task-detail-row">
 <div class="task-detail-icon"><i class="ph ph-chat-circle-dots"></i></div>
 <div class="task-detail-content">
-<div class="task-detail-label">Comments (12)</div>
-<div class="task-detail-value">
-<div class="d-flex gap-2 mb-3">
-<img alt="" class="rounded-circle" height="32" src="assets/img/avatars/avatar-4.webp" width="32"/>
-<div>
-<div class="fw-medium">Mike Johnson <small class="text-muted">2 hours ago</small></div>
-<p class="mb-0 small">WebSocket implementation is complete. Moving to the UI components now.</p>
+<div class="task-detail-label" id="taskDetailCommentsHeader">Comments (0)</div>
+<div class="task-detail-value" id="taskDetailCommentsList">
+<p class="text-muted small">No comments yet.</p>
 </div>
-</div>
-<div class="d-flex gap-2">
-<img alt="" class="rounded-circle" height="32" src="assets/img/avatars/avatar-5.webp" width="32"/>
-<div>
-<div class="fw-medium">Sarah Wilson <small class="text-muted">4 hours ago</small></div>
-<p class="mb-0 small">Great progress! Let me know if you need help with the frontend.</p>
-</div>
-</div>
+<div class="input-group mt-3">
+<input class="form-control form-control-sm" id="newCommentInput" placeholder="Write a comment…" type="text"/>
+<button class="btn btn-primary btn-sm" id="postCommentBtn" type="button"><i class="ph ph-paper-plane-tilt"></i></button>
 </div>
 </div>
 </div>
@@ -1581,9 +1572,88 @@
         : '<span class="text-muted">No assignees</span>';
       // Checklist
       renderDetailChecklist(task);
+      // Comments
+      loadComments(task.id);
       const modal = new bootstrap.Modal(document.getElementById('taskDetailModal'));
       modal.show();
     }
+
+    // ── Comments ───────────────────────────────────────────────────────────────
+    function timeAgo(iso) {
+      const diff = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+      if (diff < 60)  return 'just now';
+      if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+      if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+      return Math.floor(diff/86400) + 'd ago';
+    }
+
+    function renderComments(comments) {
+      const me = JSON.parse(localStorage.getItem('fp_user') || '{}');
+      const list = document.getElementById('taskDetailCommentsList');
+      document.getElementById('taskDetailCommentsHeader').textContent = `Comments (${comments.length})`;
+      if (!comments.length) {
+        list.innerHTML = '<p class="text-muted small">No comments yet.</p>';
+        return;
+      }
+      list.innerHTML = comments.map((c, i) => {
+        const idx = allUsers.findIndex(u => u.id === c.user_id);
+        const avatar = avatarUrl(idx >= 0 ? idx : 0);
+        const canDelete = c.user_id === me.id;
+        return `<div class="d-flex gap-2${i > 0 ? ' mt-3' : ''}" data-comment-id="${c.id}">
+          <img alt="" class="rounded-circle flex-shrink-0" height="32" src="${avatar}" width="32"/>
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div class="fw-medium">${c.user_name} <small class="text-muted fw-normal">${timeAgo(c.created_at)}</small></div>
+              ${canDelete ? `<button class="btn btn-link btn-sm p-0 text-danger delete-comment-btn" data-id="${c.id}" title="Delete"><i class="ph ph-trash"></i></button>` : ''}
+            </div>
+            <p class="mb-0 small">${c.body.replace(/</g,'&lt;').replace(/\n/g,'<br>')}</p>
+          </div>
+        </div>`;
+      }).join('');
+      list.querySelectorAll('.delete-comment-btn').forEach(btn => {
+        btn.addEventListener('click', () => deleteComment(btn.dataset.id));
+      });
+    }
+
+    async function loadComments(taskId) {
+      try {
+        const comments = await FP.apiFetch(`/kanban/tasks/${taskId}/comments`);
+        renderComments(comments);
+      } catch { renderComments([]); }
+    }
+
+    async function postComment() {
+      const input = document.getElementById('newCommentInput');
+      const body = input.value.trim();
+      if (!body) return;
+      const task = window._detailsTask;
+      if (!task) return;
+      input.disabled = true;
+      try {
+        await FP.apiFetch(`/kanban/tasks/${task.id}/comments`, {
+          method: 'POST',
+          body: JSON.stringify({ body }),
+        });
+        input.value = '';
+        await loadComments(task.id);
+      } catch { FP.showError('Could not post comment'); }
+      input.disabled = false;
+      input.focus();
+    }
+
+    async function deleteComment(commentId) {
+      const task = window._detailsTask;
+      if (!task) return;
+      try {
+        await FP.apiFetch(`/kanban/tasks/${task.id}/comments/${commentId}`, { method: 'DELETE' });
+        await loadComments(task.id);
+      } catch { FP.showError('Could not delete comment'); }
+    }
+
+    document.getElementById('postCommentBtn').addEventListener('click', postComment);
+    document.getElementById('newCommentInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); postComment(); }
+    });
 
     document.getElementById('taskDetailDeleteBtn').addEventListener('click', async () => {
       const t = window._detailsTask;
@@ -1753,6 +1823,7 @@
     await loadUsers();
     renderAssigneePicker();
     await loadTasks();
+    FP.initHeaderDropdowns();
   });
   </script>
 <script src="assets/js/portal.js"></script>

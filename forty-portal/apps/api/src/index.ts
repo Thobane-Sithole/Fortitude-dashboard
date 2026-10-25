@@ -15,6 +15,7 @@ import notificationsRouter from './routes/notifications.js';
 import chatRouter           from './routes/chat.js';
 import calendarRouter       from './routes/calendar.js';
 import kanbanRouter         from './routes/kanban.js';
+import contactsRouter       from './routes/contacts.js';
 
 const app = express();
 const PORT = Number(process.env.PORT ?? 3001);
@@ -45,6 +46,7 @@ app.use('/api/notifications', notificationsRouter);
 app.use('/api/chat',          chatRouter);
 app.use('/api/calendar',      calendarRouter);
 app.use('/api/kanban',        kanbanRouter);
+app.use('/api/contacts',      contactsRouter);
 
 // Health check
 app.get('/health', async (_req, res) => {

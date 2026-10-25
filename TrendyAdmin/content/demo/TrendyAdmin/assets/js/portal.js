@@ -120,5 +120,90 @@ const FP = (() => {
     setTimeout(() => { el.style.display = 'none'; }, 4000);
   }
 
-  return { getToken, setToken, getRefresh, setRefresh, getUser, setUser, logout, apiFetch, requireAuth, fmt, fmtFull, set, initUserDisplay, initLogout, showError };
+  function _headerTimeAgo(iso) {
+    const diff = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+    if (diff < 60) return 'now';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm';
+    if (diff < 86400) return Math.floor(diff / 3600) + 'h';
+    return Math.floor(diff / 86400) + 'd';
+  }
+
+  const _NOTIF_ICON = { success: 'ph-check-circle', warning: 'ph-warning', error: 'ph-x-circle', info: 'ph-info' };
+  const _NOTIF_COLOR = { success: 'success', warning: 'warning', error: 'danger', info: 'info' };
+
+  async function initHeaderDropdowns() {
+    // ── Messages ──────────────────────────────────────────────────────────────
+    try {
+      const contacts = await apiFetch('/chat/contacts');
+      const withUnread = contacts.filter(c => c.unread_count > 0);
+      const totalUnread = withUnread.reduce((s, c) => s + c.unread_count, 0);
+
+      ['fp-msg-badge', 'fp-mobile-msg-badge'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (totalUnread > 0) { el.textContent = totalUnread; el.style.display = ''; }
+        else el.style.display = 'none';
+      });
+
+      const list = document.getElementById('fp-messages-list');
+      if (list) {
+        const top3 = contacts.slice(0, 3);
+        list.innerHTML = top3.length
+          ? top3.map((c, i) => {
+              const av = (i % 9) + 1;
+              const unread = c.unread_count > 0;
+              const time = c.last_message_at ? _headerTimeAgo(c.last_message_at) : '';
+              const msg = c.last_message ? c.last_message.substring(0, 45) : 'No messages yet';
+              return `<a class="message-item${unread ? ' unread' : ''}" href="apps-chat.html">
+                <span class="message-avatar"><img alt="${c.name}" src="assets/img/avatars/avatar-${av}.webp"/></span>
+                <span class="message-content">
+                  <span class="message-name">${c.name}</span>
+                  <span class="message-text">${msg}</span>
+                </span>
+                <span class="message-time">${time}</span>
+              </a>`;
+            }).join('')
+          : '<div class="text-center p-3 text-muted small">No messages</div>';
+      }
+    } catch {}
+
+    // ── Notifications ──────────────────────────────────────────────────────────
+    try {
+      const notifs = await apiFetch('/notifications');
+      const unreadCount = notifs.filter(n => !n.is_read).length;
+
+      ['fp-notif-badge', 'fp-mobile-notif-badge'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (unreadCount > 0) { el.textContent = unreadCount; el.style.display = ''; }
+        else el.style.display = 'none';
+      });
+
+      const hdr = document.getElementById('fp-notif-header-text');
+      if (hdr) hdr.textContent = unreadCount > 0
+        ? `You have ${unreadCount} new notification${unreadCount !== 1 ? 's' : ''}`
+        : 'Notifications';
+
+      const nl = document.getElementById('fp-notif-list');
+      if (nl) {
+        nl.innerHTML = notifs.slice(0, 3).map(n => {
+          const icon = _NOTIF_ICON[n.type] || 'ph-info';
+          const color = _NOTIF_COLOR[n.type] || 'info';
+          return `<div class="notification-item${n.is_read ? '' : ' unread'}">
+            <span class="notification-icon ${color}"><i class="ph ${icon}"></i></span>
+            <span class="notification-content">
+              <span class="notification-title">${n.title}</span>
+              <span class="notification-text">${n.message || ''}</span>
+            </span>
+            <span class="notification-meta">
+              <span class="notification-time">${_headerTimeAgo(n.created_at)}</span>
+              ${n.is_read ? '' : '<span class="notification-dot"></span>'}
+            </span>
+          </div>`;
+        }).join('') || '<div class="text-center p-3 text-muted small">No notifications</div>';
+      }
+    } catch {}
+  }
+
+  return { getToken, setToken, getRefresh, setRefresh, getUser, setUser, logout, apiFetch, requireAuth, fmt, fmtFull, set, initUserDisplay, initLogout, showError, initHeaderDropdowns };
 })();
